@@ -6,11 +6,7 @@ import { fetchCandidatesAction } from "../features/candidate/candidateDataSlice"
 const CandiDetailComponent = () => {
   const dispatch = useAppDispatch();
   const { data, currentPage, pageSize, totalRecords, isLoading, error }: any =
-  useAppSelector((state) => state.candidatealldata);
-  const [candidateData, setCandidateData] = useState<any>([]);
-
-  
-  console.log('data: ', data);
+    useAppSelector((state) => state.candidatealldata);
 
   console.log(data);
   useEffect(() => {
@@ -24,13 +20,17 @@ const CandiDetailComponent = () => {
     );
   }, [dispatch, currentPage, pageSize]);
 
-  useEffect(() => {
-    setCandidateData(data);
-  }, [data]);
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
   return (
     <div className="flex flex-col w-full h-full">
-      {candidateData.map((candidate: any) => {
+      {data.map((candidate: any) => {
         return (
           <div className="my-4 border-[1px] rounded-md" key={candidate.id}>
             {/* //details component */}
@@ -84,7 +84,6 @@ const CandiDetailComponent = () => {
             </div>
           </div>
         );
-
       })}
     </div>
   );
