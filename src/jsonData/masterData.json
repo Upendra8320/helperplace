@@ -1,0 +1,3094 @@
+
+{
+    "success": true,
+    "status": 1,
+    "data": {
+    "job_type": [
+    {
+    "job_type_id": 1,
+    "job_type_name": "Full Time",
+    "en_job_type_name": "Full Time",
+    "job_type_icon": "https://cdn.helperplace.com/icons/clock.svg"
+    },
+    {
+    "job_type_id": 2,
+    "job_type_name": "Part Time",
+    "en_job_type_name": "Part Time",
+    "job_type_icon": "https://cdn.helperplace.com/icons/time-mgmt.svg"
+    },
+    {
+    "job_type_id": 3,
+    "job_type_name": "Temporary",
+    "en_job_type_name": "Temporary",
+    "job_type_icon": "https://cdn.helperplace.com/icons/signs.svg"
+    }
+    ],
+    "job_position": [
+    {
+    "job_position_id": 1,
+    "position_name": "Domestic Helper",
+    "position_icon": "https://cdn.helperplace.com/icons/maid.svg"
+    },
+    {
+    "job_position_id": 2,
+    "position_name": "Driver",
+    "position_icon": "https://cdn.helperplace.com/icons/driver.svg"
+    }
+    ],
+    "accommodation_type": [
+    {
+    "accommodation_type_id": 3,
+    "accommodation_type": "Live Out",
+    "for_resume": 1,
+    "for_job": 1
+    },
+    {
+    "accommodation_type_id": 1,
+    "accommodation_type": "Flexible",
+    "for_resume": 1,
+    "for_job": 1
+    },
+    {
+    "accommodation_type_id": 2,
+    "accommodation_type": "To be Discussed",
+    "for_resume": 1,
+    "for_job": 1
+    },
+    {
+    "accommodation_type_id": 4,
+    "accommodation_type": "Live In - Share with kid",
+    "for_resume": 0,
+    "for_job": 1
+    },
+    {
+    "accommodation_type_id": 5,
+    "accommodation_type": "Live In - Share with coworker",
+    "for_resume": 0,
+    "for_job": 1
+    },
+    {
+    "accommodation_type_id": 6,
+    "accommodation_type": "Live In - Separate room",
+    "for_resume": 1,
+    "for_job": 1
+    },
+    {
+    "accommodation_type_id": 7,
+    "accommodation_type": "Live In - Share room",
+    "for_resume": 1,
+    "for_job": 0
+    },
+    {
+    "accommodation_type_id": 9,
+    "accommodation_type": "Live In",
+    "for_resume": 1,
+    "for_job": 0
+    }
+    ],
+    "contract_status": [
+    {
+    "contract_sts_id": 6,
+    "contract_sts_name": "Any Situation",
+    "for_resume": 0,
+    "for_job": 1
+    },
+    {
+    "contract_sts_id": 1,
+    "contract_sts_name": "Finished Contract",
+    "for_resume": 1,
+    "for_job": 1
+    },
+    {
+    "contract_sts_id": 3,
+    "contract_sts_name": "Terminated (Relocation / Financial)",
+    "for_resume": 1,
+    "for_job": 1
+    },
+    {
+    "contract_sts_id": 4,
+    "contract_sts_name": "Terminated (Other)",
+    "for_resume": 1,
+    "for_job": 1
+    },
+    {
+    "contract_sts_id": 5,
+    "contract_sts_name": "Break Contract",
+    "for_resume": 1,
+    "for_job": 1
+    },
+    {
+    "contract_sts_id": 7,
+    "contract_sts_name": "Transfer",
+    "for_resume": 1,
+    "for_job": 1
+    },
+    {
+    "contract_sts_id": 12,
+    "contract_sts_name": "Overseas",
+    "for_resume": 0,
+    "for_job": 1
+    },
+    {
+    "contract_sts_id": 11,
+    "contract_sts_name": "Working in Home Country",
+    "for_resume": 1,
+    "for_job": 0
+    },
+    {
+    "contract_sts_id": 2,
+    "contract_sts_name": "Unemployed",
+    "for_resume": 1,
+    "for_job": 0
+    },
+    {
+    "contract_sts_id": 8,
+    "contract_sts_name": "Ex overseas",
+    "for_resume": 1,
+    "for_job": 0
+    }
+    ],
+    "religion": [
+    {
+    "religion_id": 1,
+    "religion_name": "Atheist"
+    },
+    {
+    "religion_id": 2,
+    "religion_name": "Buddhist"
+    },
+    {
+    "religion_id": 3,
+    "religion_name": "Catholic"
+    },
+    {
+    "religion_id": 4,
+    "religion_name": "Christian"
+    },
+    {
+    "religion_id": 5,
+    "religion_name": "Hinduist"
+    },
+    {
+    "religion_id": 6,
+    "religion_name": "Jainism"
+    },
+    {
+    "religion_id": 7,
+    "religion_name": "Judaist"
+    },
+    {
+    "religion_id": 8,
+    "religion_name": "Muslim"
+    },
+    {
+    "religion_id": 10,
+    "religion_name": "Sikh"
+    },
+    {
+    "religion_id": 11,
+    "religion_name": "Hindu"
+    },
+    {
+    "religion_id": 9,
+    "religion_name": "Other"
+    }
+    ],
+    "nationality": [
+    {
+    "nationality_id": 35,
+    "nationality_name": "Afghan",
+    "en_nationality_name": "Afghan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/afghanistan.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 36,
+    "nationality_name": "Albanian",
+    "en_nationality_name": "Albanian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/albania.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 37,
+    "nationality_name": "Algerian",
+    "en_nationality_name": "Algerian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/algeria.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 11,
+    "nationality_name": "American",
+    "en_nationality_name": "American",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/united-states-of-america.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 38,
+    "nationality_name": "Andorran",
+    "en_nationality_name": "Andorran",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/andorra.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 39,
+    "nationality_name": "Angolan",
+    "en_nationality_name": "Angolan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/angola.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 40,
+    "nationality_name": "Argentinian",
+    "en_nationality_name": "Argentinian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/argentina.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 41,
+    "nationality_name": "Armenian",
+    "en_nationality_name": "Armenian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/armenia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 42,
+    "nationality_name": "Asian",
+    "en_nationality_name": "Asian",
+    "country_id": null,
+    "for_resume": 0,
+    "flag_icon": null,
+    "for_job": 1
+    },
+    {
+    "nationality_id": 12,
+    "nationality_name": "Australian",
+    "en_nationality_name": "Australian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/australia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 43,
+    "nationality_name": "Austrian",
+    "en_nationality_name": "Austrian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/austria.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 44,
+    "nationality_name": "Azerbaijani",
+    "en_nationality_name": "Azerbaijani",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/azerbaijan.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 45,
+    "nationality_name": "Bahamian",
+    "en_nationality_name": "Bahamian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/bahamas.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 46,
+    "nationality_name": "Bahraini",
+    "en_nationality_name": "Bahraini",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/bahrain.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 1,
+    "nationality_name": "Bangladeshi",
+    "en_nationality_name": "Bangladeshi",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/bangladesh.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 47,
+    "nationality_name": "Barbadian",
+    "en_nationality_name": "Barbadian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/barbados.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 48,
+    "nationality_name": "Belarusian",
+    "en_nationality_name": "Belarusian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/belarus.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 13,
+    "nationality_name": "Belgian",
+    "en_nationality_name": "Belgian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/belgium.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 49,
+    "nationality_name": "Belizean",
+    "en_nationality_name": "Belizean",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/belize.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 50,
+    "nationality_name": "Beninese",
+    "en_nationality_name": "Beninese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/benin.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 51,
+    "nationality_name": "Bermudian",
+    "en_nationality_name": "Bermudian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/bermuda.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 52,
+    "nationality_name": "Bhutanese",
+    "en_nationality_name": "Bhutanese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/bhutan.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 53,
+    "nationality_name": "Bolivian",
+    "en_nationality_name": "Bolivian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/bolivia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 54,
+    "nationality_name": "Bosnian",
+    "en_nationality_name": "Bosnian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/bosnia-and-herzegovina.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 55,
+    "nationality_name": "Botswanan",
+    "en_nationality_name": "Botswanan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/botswana.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 56,
+    "nationality_name": "Brazilian",
+    "en_nationality_name": "Brazilian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/brazil.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 14,
+    "nationality_name": "British",
+    "en_nationality_name": "British",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/united-kingdom.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 57,
+    "nationality_name": "Bulgarian",
+    "en_nationality_name": "Bulgarian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/bulgaria.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 58,
+    "nationality_name": "Burkinese",
+    "en_nationality_name": "Burkinese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/burkina-faso.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 59,
+    "nationality_name": "Burmese",
+    "en_nationality_name": "Burmese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/myanmar-burma.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 60,
+    "nationality_name": "Burundian",
+    "en_nationality_name": "Burundian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/burundi.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 61,
+    "nationality_name": "Cambodian",
+    "en_nationality_name": "Cambodian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/cambodia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 62,
+    "nationality_name": "Cameroonian",
+    "en_nationality_name": "Cameroonian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/cameroon.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 15,
+    "nationality_name": "Canadian",
+    "en_nationality_name": "Canadian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/canada.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 63,
+    "nationality_name": "Cape Verdean",
+    "en_nationality_name": "Cape Verdean",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/cape-verde.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 64,
+    "nationality_name": "Chadian",
+    "en_nationality_name": "Chadian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/chad.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 65,
+    "nationality_name": "Chilean",
+    "en_nationality_name": "Chilean",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/chile.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 2,
+    "nationality_name": "Chinese",
+    "en_nationality_name": "Chinese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/china.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 66,
+    "nationality_name": "Colombian",
+    "en_nationality_name": "Colombian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/colombia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 67,
+    "nationality_name": "Congolese",
+    "en_nationality_name": "Congolese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/democratic-republic-of-congo.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 68,
+    "nationality_name": "Costa Rican",
+    "en_nationality_name": "Costa Rican",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/costa-rica.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 69,
+    "nationality_name": "Croat",
+    "en_nationality_name": "Croat",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/croatia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 70,
+    "nationality_name": "Cuban",
+    "en_nationality_name": "Cuban",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/cuba.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 71,
+    "nationality_name": "Cypriot",
+    "en_nationality_name": "Cypriot",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/cyprus.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 72,
+    "nationality_name": "Czech",
+    "en_nationality_name": "Czech",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/czech-republic.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 73,
+    "nationality_name": "Danish",
+    "en_nationality_name": "Danish",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/denmark.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 74,
+    "nationality_name": "Djiboutian",
+    "en_nationality_name": "Djiboutian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/djibouti.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 76,
+    "nationality_name": "Dominican",
+    "en_nationality_name": "Dominican",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/dominican-republic.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 16,
+    "nationality_name": "Dutch",
+    "en_nationality_name": "Dutch",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/netherlands.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 77,
+    "nationality_name": "Ecuadorean",
+    "en_nationality_name": "Ecuadorean",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/ecuador.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 78,
+    "nationality_name": "Egyptian",
+    "en_nationality_name": "Egyptian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/egypt.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 79,
+    "nationality_name": "Emirati",
+    "en_nationality_name": "Emirati",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/united-arab-emirates.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 80,
+    "nationality_name": "Eritrean",
+    "en_nationality_name": "Eritrean",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/eritrea.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 81,
+    "nationality_name": "Estonian",
+    "en_nationality_name": "Estonian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/estonia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 82,
+    "nationality_name": "Ethiopian",
+    "en_nationality_name": "Ethiopian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/ethiopia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 83,
+    "nationality_name": "European",
+    "en_nationality_name": "European",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/european-union.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 84,
+    "nationality_name": "Fijian",
+    "en_nationality_name": "Fijian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/fiji.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 3,
+    "nationality_name": "Filipino",
+    "en_nationality_name": "Filipino",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/philippines.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 85,
+    "nationality_name": "Finnish",
+    "en_nationality_name": "Finnish",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/finland.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 17,
+    "nationality_name": "French",
+    "en_nationality_name": "French",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/france.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 87,
+    "nationality_name": "Gabonese",
+    "en_nationality_name": "Gabonese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/gabon.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 88,
+    "nationality_name": "Gambian",
+    "en_nationality_name": "Gambian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/gambia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 89,
+    "nationality_name": "Georgian",
+    "en_nationality_name": "Georgian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/georgia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 18,
+    "nationality_name": "German",
+    "en_nationality_name": "German",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/germany.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 90,
+    "nationality_name": "Ghanaian",
+    "en_nationality_name": "Ghanaian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/ghana.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 91,
+    "nationality_name": "Greek",
+    "en_nationality_name": "Greek",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/greece.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 92,
+    "nationality_name": "Grenadian",
+    "en_nationality_name": "Grenadian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/grenada.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 93,
+    "nationality_name": "Guatemalan",
+    "en_nationality_name": "Guatemalan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/guatemala.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 95,
+    "nationality_name": "Guinean",
+    "en_nationality_name": "Guinean",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/guinea.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 96,
+    "nationality_name": "Guyanese",
+    "en_nationality_name": "Guyanese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/guyana.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 97,
+    "nationality_name": "Haitian",
+    "en_nationality_name": "Haitian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/haiti.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 98,
+    "nationality_name": "Honduran",
+    "en_nationality_name": "Honduran",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/honduras.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 4,
+    "nationality_name": "HongKongese",
+    "en_nationality_name": "HongKongese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/hong-kong.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 99,
+    "nationality_name": "Hungarian",
+    "en_nationality_name": "Hungarian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/hungary.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 100,
+    "nationality_name": "Icelandic",
+    "en_nationality_name": "Icelandic",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/iceland.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 5,
+    "nationality_name": "Indian",
+    "en_nationality_name": "Indian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/india.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 6,
+    "nationality_name": "Indonesian",
+    "en_nationality_name": "Indonesian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/indonesia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 101,
+    "nationality_name": "Iranian",
+    "en_nationality_name": "Iranian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/iran.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 102,
+    "nationality_name": "Iraqi",
+    "en_nationality_name": "Iraqi",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/iraq.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 103,
+    "nationality_name": "Ireland",
+    "en_nationality_name": "Ireland",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/ireland.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 104,
+    "nationality_name": "Israeli",
+    "en_nationality_name": "Israeli",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/israel.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 19,
+    "nationality_name": "Italian",
+    "en_nationality_name": "Italian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/italy.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 105,
+    "nationality_name": "Jamaican",
+    "en_nationality_name": "Jamaican",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/jamaica.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 20,
+    "nationality_name": "Japanese",
+    "en_nationality_name": "Japanese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/japan.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 106,
+    "nationality_name": "Jordanian",
+    "en_nationality_name": "Jordanian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/jordan.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 107,
+    "nationality_name": "Kazakh",
+    "en_nationality_name": "Kazakh",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/kazakhstan.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 108,
+    "nationality_name": "Kenyan",
+    "en_nationality_name": "Kenyan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/kenya.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 21,
+    "nationality_name": "Korean",
+    "en_nationality_name": "Korean",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/south-korea.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 109,
+    "nationality_name": "Kuwaiti",
+    "en_nationality_name": "Kuwaiti",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/kuwait.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 110,
+    "nationality_name": "Latvian",
+    "en_nationality_name": "Latvian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/latvia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 111,
+    "nationality_name": "Lebanese",
+    "en_nationality_name": "Lebanese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/lebanon.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 112,
+    "nationality_name": "Liberian",
+    "en_nationality_name": "Liberian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/liberia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 113,
+    "nationality_name": "Libyan",
+    "en_nationality_name": "Libyan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/libya.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 114,
+    "nationality_name": "Lithuanian",
+    "en_nationality_name": "Lithuanian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/lithuania.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 115,
+    "nationality_name": "Luxembourg",
+    "en_nationality_name": "Luxembourg",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/luxembourg.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 116,
+    "nationality_name": "Madagascan",
+    "en_nationality_name": "Madagascan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/madagascar.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 117,
+    "nationality_name": "Malawian",
+    "en_nationality_name": "Malawian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/malawi.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 22,
+    "nationality_name": "Malaysian",
+    "en_nationality_name": "Malaysian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/malaysia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 119,
+    "nationality_name": "Maldivian",
+    "en_nationality_name": "Maldivian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/maldives.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 120,
+    "nationality_name": "Malian",
+    "en_nationality_name": "Malian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/mali.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 121,
+    "nationality_name": "Maltese",
+    "en_nationality_name": "Maltese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/malta.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 122,
+    "nationality_name": "Mauritanian",
+    "en_nationality_name": "Mauritanian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/mauritania.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 123,
+    "nationality_name": "Mauritian",
+    "en_nationality_name": "Mauritian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/mauritius.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 124,
+    "nationality_name": "Mexican",
+    "en_nationality_name": "Mexican",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/mexico.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 23,
+    "nationality_name": "Middle East",
+    "en_nationality_name": "Middle East",
+    "country_id": null,
+    "for_resume": 0,
+    "flag_icon": null,
+    "for_job": 1
+    },
+    {
+    "nationality_id": 125,
+    "nationality_name": "Monacan",
+    "en_nationality_name": "Monacan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/monaco.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 126,
+    "nationality_name": "Mongolian",
+    "en_nationality_name": "Mongolian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/mongolia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 127,
+    "nationality_name": "Montenegrin",
+    "en_nationality_name": "Montenegrin",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/montenegro.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 128,
+    "nationality_name": "Moroccan",
+    "en_nationality_name": "Moroccan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/morocco.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 129,
+    "nationality_name": "Mozambican",
+    "en_nationality_name": "Mozambican",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/mozambique.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 130,
+    "nationality_name": "Namibian",
+    "en_nationality_name": "Namibian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/namibia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 7,
+    "nationality_name": "Nepali",
+    "en_nationality_name": "Nepali",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/nepal.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 131,
+    "nationality_name": "New Zealand",
+    "en_nationality_name": "New Zealand",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/new-zealand.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 132,
+    "nationality_name": "Nicaraguan",
+    "en_nationality_name": "Nicaraguan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/nicaragua.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 133,
+    "nationality_name": "Nigerian",
+    "en_nationality_name": "Nigerian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/niger.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 134,
+    "nationality_name": "Nigerien",
+    "en_nationality_name": "Nigerien",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/nigeria.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 135,
+    "nationality_name": "North Korean",
+    "en_nationality_name": "North Korean",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/north-korea.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 24,
+    "nationality_name": "Norwegian",
+    "en_nationality_name": "Norwegian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/norway.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 136,
+    "nationality_name": "Omani",
+    "en_nationality_name": "Omani",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/oman.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 8,
+    "nationality_name": "Pakistani",
+    "en_nationality_name": "Pakistani",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/pakistan.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 137,
+    "nationality_name": "Panamanian",
+    "en_nationality_name": "Panamanian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/panama.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 138,
+    "nationality_name": "Paraguayan",
+    "en_nationality_name": "Paraguayan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/paraguay.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 139,
+    "nationality_name": "Peruvian",
+    "en_nationality_name": "Peruvian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/peru.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 140,
+    "nationality_name": "Polish",
+    "en_nationality_name": "Polish",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/republic-of-poland.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 141,
+    "nationality_name": "Polynesian",
+    "en_nationality_name": "Polynesian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/new-zealand.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 142,
+    "nationality_name": "Portuguese",
+    "en_nationality_name": "Portuguese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/portugal.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 143,
+    "nationality_name": "Qatari",
+    "en_nationality_name": "Qatari",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/qatar.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 144,
+    "nationality_name": "Romanian",
+    "en_nationality_name": "Romanian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/romania.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 25,
+    "nationality_name": "Russian",
+    "en_nationality_name": "Russian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/russia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 145,
+    "nationality_name": "Rwandan",
+    "en_nationality_name": "Rwandan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/rwanda.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 146,
+    "nationality_name": "Salvadorean",
+    "en_nationality_name": "Salvadorean",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/salvador.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 147,
+    "nationality_name": "Samoan",
+    "en_nationality_name": "Samoan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/samoa.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 148,
+    "nationality_name": "Saudi Arabian",
+    "en_nationality_name": "Saudi Arabian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/saudi-arabia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 149,
+    "nationality_name": "Senegalese",
+    "en_nationality_name": "Senegalese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/senegal.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 150,
+    "nationality_name": "Serb or Serbian",
+    "en_nationality_name": "Serb or Serbian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/serbia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 151,
+    "nationality_name": "Sierra Leonian",
+    "en_nationality_name": "Sierra Leonian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/sierra-leone.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 26,
+    "nationality_name": "Singaporean",
+    "en_nationality_name": "Singaporean",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/singapore.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 152,
+    "nationality_name": "Slomoni",
+    "en_nationality_name": "Slomoni",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/solomon-islands.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 153,
+    "nationality_name": "Slovak",
+    "en_nationality_name": "Slovak",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/slovakia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 154,
+    "nationality_name": "Slovenian",
+    "en_nationality_name": "Slovenian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/slovenia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 155,
+    "nationality_name": "Somali",
+    "en_nationality_name": "Somali",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/somalia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 27,
+    "nationality_name": "South African",
+    "en_nationality_name": "South African",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/south-africa.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 156,
+    "nationality_name": "South Korean",
+    "en_nationality_name": "South Korean",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/south-korea.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 28,
+    "nationality_name": "Spanish",
+    "en_nationality_name": "Spanish",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/spain.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 9,
+    "nationality_name": "Sri Lankan",
+    "en_nationality_name": "Sri Lankan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/sri-lanka.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 157,
+    "nationality_name": "Sudanese",
+    "en_nationality_name": "Sudanese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/sudan.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 158,
+    "nationality_name": "Surinamese",
+    "en_nationality_name": "Surinamese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/suriname.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 159,
+    "nationality_name": "Swazi",
+    "en_nationality_name": "Swazi",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/swaziland.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 160,
+    "nationality_name": "Swedish",
+    "en_nationality_name": "Swedish",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/sweden.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 30,
+    "nationality_name": "Swiss",
+    "en_nationality_name": "Swiss",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/switzerland.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 31,
+    "nationality_name": "Taiwanese",
+    "en_nationality_name": "Taiwanese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/taiwan.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 162,
+    "nationality_name": "Tajik",
+    "en_nationality_name": "Tajik",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/tajikistan.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 10,
+    "nationality_name": "Thai",
+    "en_nationality_name": "Thai",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/thailand.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 163,
+    "nationality_name": "Togolese",
+    "en_nationality_name": "Togolese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/togo.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 164,
+    "nationality_name": "Trinidadian",
+    "en_nationality_name": "Trinidadian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/trinidad-and-tobago.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 165,
+    "nationality_name": "Tunisian",
+    "en_nationality_name": "Tunisian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/tunisia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 32,
+    "nationality_name": "Turkish",
+    "en_nationality_name": "Turkish",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/turkey.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 166,
+    "nationality_name": "Turkoman",
+    "en_nationality_name": "Turkoman",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/turkmenistan.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 167,
+    "nationality_name": "Tuvaluan",
+    "en_nationality_name": "Tuvaluan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/tuvalu.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 168,
+    "nationality_name": "Ugandan",
+    "en_nationality_name": "Ugandan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/uganda.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 169,
+    "nationality_name": "Ukrainian",
+    "en_nationality_name": "Ukrainian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/ukraine.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 170,
+    "nationality_name": "Uruguayan",
+    "en_nationality_name": "Uruguayan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/uruguay.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 171,
+    "nationality_name": "Uzbek",
+    "en_nationality_name": "Uzbek",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/uzbekistn.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 172,
+    "nationality_name": "Vanuatuan",
+    "en_nationality_name": "Vanuatuan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/vanuatu.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 173,
+    "nationality_name": "Venezuelan",
+    "en_nationality_name": "Venezuelan",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/venezuela.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 174,
+    "nationality_name": "Vietnamese",
+    "en_nationality_name": "Vietnamese",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/vietnam.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 33,
+    "nationality_name": "Western",
+    "en_nationality_name": "Western",
+    "country_id": null,
+    "for_resume": 0,
+    "flag_icon": null,
+    "for_job": 1
+    },
+    {
+    "nationality_id": 175,
+    "nationality_name": "Yemeni",
+    "en_nationality_name": "Yemeni",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/yemen.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 176,
+    "nationality_name": "Zambian",
+    "en_nationality_name": "Zambian",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": "https://cdn.helperplace.com/country/zambia.svg",
+    "for_job": 1
+    },
+    {
+    "nationality_id": 177,
+    "nationality_name": "Other",
+    "en_nationality_name": "Other",
+    "country_id": null,
+    "for_resume": 1,
+    "flag_icon": null,
+    "for_job": 0
+    }
+    ],
+    "marital_status": [
+    {
+    "id": 1,
+    "marital_status_name": "Married",
+    "en_marital_status_name": "Married"
+    },
+    {
+    "id": 2,
+    "marital_status_name": "Single",
+    "en_marital_status_name": "Single"
+    },
+    {
+    "id": 3,
+    "marital_status_name": "Divorced",
+    "en_marital_status_name": "Divorced"
+    },
+    {
+    "id": 4,
+    "marital_status_name": "Widowed",
+    "en_marital_status_name": "Widowed"
+    },
+    {
+    "id": 5,
+    "marital_status_name": "Separated",
+    "en_marital_status_name": "Separated"
+    }
+    ],
+    "employer_type": [
+    {
+    "employer_type_id": 1,
+    "type_name": "Family",
+    "en_type_name": "Family",
+    "employer_type_icon": "https://cdn.helperplace.com/icons/family.svg"
+    },
+    {
+    "employer_type_id": 2,
+    "type_name": "Company",
+    "en_type_name": "Company",
+    "employer_type_icon": "https://cdn.helperplace.com/icons/company.svg"
+    },
+    {
+    "employer_type_id": 3,
+    "type_name": "Other",
+    "en_type_name": "Other",
+    "employer_type_icon": "https://cdn.helperplace.com/icons/other.svg"
+    }
+    ],
+    "education_level": [
+    {
+    "edu_level_id": 4,
+    "edu_name": "Secondary School"
+    },
+    {
+    "edu_level_id": 3,
+    "edu_name": "High School"
+    },
+    {
+    "edu_level_id": 1,
+    "edu_name": "Bachelor"
+    },
+    {
+    "edu_level_id": 2,
+    "edu_name": "Master"
+    },
+    {
+    "edu_level_id": 6,
+    "edu_name": "Doctorate "
+    },
+    {
+    "edu_level_id": 5,
+    "edu_name": "University"
+    }
+    ],
+    "skill_category": [
+    {
+    "skill_category_id": 1,
+    "skill_category_name": "Language",
+    "en_skill_category_name": "Language",
+    "for_helper": 1,
+    "skill_category_icon": "https://cdn.helperplace.com/skill_cat/1_1599642484.webp",
+    "for_employer": 1,
+    "mandatory_for_job": 1,
+    "mandatory_for_resume": 1
+    },
+    {
+    "skill_category_id": 4,
+    "skill_category_name": "Main Skills",
+    "en_skill_category_name": "Main Skills",
+    "for_helper": 1,
+    "skill_category_icon": "https://cdn.helperplace.com/skill_cat/4_1599643968.webp",
+    "for_employer": 1,
+    "mandatory_for_job": 1,
+    "mandatory_for_resume": 1
+    },
+    {
+    "skill_category_id": 2,
+    "skill_category_name": "Cooking Skills",
+    "en_skill_category_name": "Cooking Skills",
+    "for_helper": 1,
+    "skill_category_icon": "https://cdn.helperplace.com/skill_cat/2_1599644151.webp",
+    "for_employer": 1,
+    "mandatory_for_job": 0,
+    "mandatory_for_resume": 0
+    },
+    {
+    "skill_category_id": 3,
+    "skill_category_name": "Other Skills",
+    "en_skill_category_name": "Other Skills",
+    "for_helper": 1,
+    "skill_category_icon": "https://cdn.helperplace.com/skill_cat/3_1599642528.webp",
+    "for_employer": 1,
+    "mandatory_for_job": 0,
+    "mandatory_for_resume": 0
+    },
+    {
+    "skill_category_id": 5,
+    "skill_category_name": "Personality",
+    "en_skill_category_name": "Personality",
+    "for_helper": 1,
+    "skill_category_icon": "https://cdn.helperplace.com/skill_cat/5_1599644127.webp",
+    "for_employer": 0,
+    "mandatory_for_job": 0,
+    "mandatory_for_resume": 1
+    }
+    ],
+    "skills": [
+    {
+    "skill_id": 3,
+    "skill_category_id": 1,
+    "skill_name": "English",
+    "skill_icon": "https://cdn.helperplace.com/country/united-kingdom.svg"
+    },
+    {
+    "skill_id": 23,
+    "skill_category_id": 3,
+    "skill_name": "Baking",
+    "skill_icon": "https://cdn.helperplace.com/icons/baking.svg"
+    },
+    {
+    "skill_id": 22,
+    "skill_category_id": 4,
+    "skill_name": "Baby Care",
+    "skill_icon": "https://cdn.helperplace.com/icons/baby-care.svg"
+    },
+    {
+    "skill_id": 11,
+    "skill_category_id": 2,
+    "skill_name": "Middle East",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 49,
+    "skill_category_id": 5,
+    "skill_name": "Good Listener",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 2,
+    "skill_category_id": 1,
+    "skill_name": "Cantonese",
+    "skill_icon": "https://cdn.helperplace.com/country/hong-kong.svg"
+    },
+    {
+    "skill_id": 25,
+    "skill_category_id": 4,
+    "skill_name": "Child Care",
+    "skill_icon": "https://cdn.helperplace.com/icons/child-care.svg"
+    },
+    {
+    "skill_id": 55,
+    "skill_category_id": 3,
+    "skill_name": "Caregiver",
+    "skill_icon": "https://cdn.helperplace.com/icons/caregiver.svg"
+    },
+    {
+    "skill_id": 53,
+    "skill_category_id": 2,
+    "skill_name": "Asian",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 50,
+    "skill_category_id": 5,
+    "skill_name": "Hardworking",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 51,
+    "skill_category_id": 5,
+    "skill_name": "Honest",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 24,
+    "skill_category_id": 3,
+    "skill_name": "Car Wash",
+    "skill_icon": "https://cdn.helperplace.com/icons/car-wash.svg"
+    },
+    {
+    "skill_id": 43,
+    "skill_category_id": 4,
+    "skill_name": "Teen Care",
+    "skill_icon": "https://cdn.helperplace.com/icons/teen-care.svg"
+    },
+    {
+    "skill_id": 13,
+    "skill_category_id": 2,
+    "skill_name": "Chinese",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 8,
+    "skill_category_id": 1,
+    "skill_name": "Mandarin",
+    "skill_icon": "https://cdn.helperplace.com/country/china.svg"
+    },
+    {
+    "skill_id": 14,
+    "skill_category_id": 2,
+    "skill_name": "French",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 52,
+    "skill_category_id": 5,
+    "skill_name": "Independent",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 26,
+    "skill_category_id": 3,
+    "skill_name": "Computer",
+    "skill_icon": "https://cdn.helperplace.com/icons/computer.svg"
+    },
+    {
+    "skill_id": 1,
+    "skill_category_id": 1,
+    "skill_name": "Arabic",
+    "skill_icon": "https://cdn.helperplace.com/country/saudi-arabia.svg"
+    },
+    {
+    "skill_id": 32,
+    "skill_category_id": 4,
+    "skill_name": "Elderly care",
+    "skill_icon": "https://cdn.helperplace.com/icons/elderly-care.svg"
+    },
+    {
+    "skill_id": 16,
+    "skill_category_id": 2,
+    "skill_name": "Indian",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 7,
+    "skill_category_id": 1,
+    "skill_name": "Japanese",
+    "skill_icon": "https://cdn.helperplace.com/country/japan.svg"
+    },
+    {
+    "skill_id": 56,
+    "skill_category_id": 5,
+    "skill_name": "Initiative",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 39,
+    "skill_category_id": 4,
+    "skill_name": "Pet Care",
+    "skill_icon": "https://cdn.helperplace.com/icons/pet-care.svg"
+    },
+    {
+    "skill_id": 30,
+    "skill_category_id": 3,
+    "skill_name": "Driving Licence",
+    "skill_icon": "https://cdn.helperplace.com/icons/driving-license.svg"
+    },
+    {
+    "skill_id": 33,
+    "skill_category_id": 3,
+    "skill_name": "First Aid",
+    "skill_icon": "https://cdn.helperplace.com/icons/first-aid.svg"
+    },
+    {
+    "skill_id": 44,
+    "skill_category_id": 4,
+    "skill_name": "Tutoring",
+    "skill_icon": "https://cdn.helperplace.com/icons/tutoring.svg"
+    },
+    {
+    "skill_id": 57,
+    "skill_category_id": 5,
+    "skill_name": "Kids Lover",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 4,
+    "skill_category_id": 1,
+    "skill_name": "Filipino (Tagalog)",
+    "skill_icon": "https://cdn.helperplace.com/country/philippines.svg"
+    },
+    {
+    "skill_id": 17,
+    "skill_category_id": 2,
+    "skill_name": "Italian",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 34,
+    "skill_category_id": 3,
+    "skill_name": "Gardening",
+    "skill_icon": "https://cdn.helperplace.com/icons/gardening.svg"
+    },
+    {
+    "skill_id": 58,
+    "skill_category_id": 5,
+    "skill_name": "Love Cooking",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 18,
+    "skill_category_id": 2,
+    "skill_name": "Japanese",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 37,
+    "skill_category_id": 4,
+    "skill_name": "Housekeeping",
+    "skill_icon": "https://cdn.helperplace.com/icons/housekeeping.svg"
+    },
+    {
+    "skill_id": 27,
+    "skill_category_id": 4,
+    "skill_name": "Cooking",
+    "skill_icon": "https://cdn.helperplace.com/icons/cooking.svg"
+    },
+    {
+    "skill_id": 59,
+    "skill_category_id": 5,
+    "skill_name": "Loyal",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 36,
+    "skill_category_id": 3,
+    "skill_name": "Handyman",
+    "skill_icon": "https://cdn.helperplace.com/icons/handyman.svg"
+    },
+    {
+    "skill_id": 19,
+    "skill_category_id": 2,
+    "skill_name": "Thai",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 5,
+    "skill_category_id": 1,
+    "skill_name": "Hindi",
+    "skill_icon": "https://cdn.helperplace.com/country/india.svg"
+    },
+    {
+    "skill_id": 6,
+    "skill_category_id": 1,
+    "skill_name": "Indonesian (Bahasa)",
+    "skill_icon": "https://cdn.helperplace.com/country/indonesia.svg"
+    },
+    {
+    "skill_id": 60,
+    "skill_category_id": 5,
+    "skill_name": "Patience",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 38,
+    "skill_category_id": 3,
+    "skill_name": "Housework",
+    "skill_icon": "https://cdn.helperplace.com/icons/housework.svg"
+    },
+    {
+    "skill_id": 9,
+    "skill_category_id": 1,
+    "skill_name": "Thai",
+    "skill_icon": "https://cdn.helperplace.com/country/thailand.svg"
+    },
+    {
+    "skill_id": 54,
+    "skill_category_id": 2,
+    "skill_name": "Singaporean",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 41,
+    "skill_category_id": 3,
+    "skill_name": "Sewing",
+    "skill_icon": "https://cdn.helperplace.com/icons/sewing.svg"
+    },
+    {
+    "skill_id": 61,
+    "skill_category_id": 5,
+    "skill_name": "Pet Lover",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 20,
+    "skill_category_id": 2,
+    "skill_name": "Vegetarian",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 29,
+    "skill_category_id": 4,
+    "skill_name": "Driving",
+    "skill_icon": "https://cdn.helperplace.com/icons/driving.svg"
+    },
+    {
+    "skill_id": 21,
+    "skill_category_id": 2,
+    "skill_name": "Western",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 42,
+    "skill_category_id": 3,
+    "skill_name": "Swimming",
+    "skill_icon": "https://cdn.helperplace.com/icons/swimming.svg"
+    },
+    {
+    "skill_id": 62,
+    "skill_category_id": 5,
+    "skill_name": "Trustworthy",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 63,
+    "skill_category_id": 5,
+    "skill_name": "Strong",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 12,
+    "skill_category_id": 2,
+    "skill_name": "Cook pork",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 48,
+    "skill_category_id": 4,
+    "skill_name": "Marketing",
+    "skill_icon": "https://cdn.helperplace.com/icons/marketing.svg"
+    },
+    {
+    "skill_id": 64,
+    "skill_category_id": 5,
+    "skill_name": "Willing to Learn",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 65,
+    "skill_category_id": 5,
+    "skill_name": "Work Without Supervision",
+    "skill_icon": null
+    },
+    {
+    "skill_id": 66,
+    "skill_category_id": 4,
+    "skill_name": "Groceries",
+    "skill_icon": "https://cdn.helperplace.com/icons/groceries.svg"
+    }
+    ],
+    "job_location": [
+    {
+    "job_location_id": 1,
+    "location_name": "Hong Kong",
+    "country_id": 1,
+    "country_code": "HK",
+    "country_name": "Hong Kong",
+    "short_name": "hongkong",
+    "country_flag_icon": "https://cdn.helperplace.com/country/hong-kong.svg"
+    },
+    {
+    "job_location_id": 5,
+    "location_name": "Singapore",
+    "country_id": 5,
+    "country_code": "SG",
+    "country_name": "Singapore",
+    "short_name": "singapore",
+    "country_flag_icon": "https://cdn.helperplace.com/country/singapore.svg"
+    },
+    {
+    "job_location_id": 2,
+    "location_name": "Macau",
+    "country_id": 2,
+    "country_code": "MO",
+    "country_name": "Macau",
+    "short_name": "macau",
+    "country_flag_icon": "https://cdn.helperplace.com/country/macau.svg"
+    },
+    {
+    "job_location_id": 4,
+    "location_name": "Saudi Arabia",
+    "country_id": 4,
+    "country_code": "SA",
+    "country_name": "Saudi Arabia",
+    "short_name": "saudi-arabia",
+    "country_flag_icon": "https://cdn.helperplace.com/country/saudi-arabia.svg"
+    },
+    {
+    "job_location_id": 3,
+    "location_name": "Qatar",
+    "country_id": 3,
+    "country_code": "QA",
+    "country_name": "Qatar",
+    "short_name": "qatar",
+    "country_flag_icon": "https://cdn.helperplace.com/country/qatar.svg"
+    },
+    {
+    "job_location_id": 7,
+    "location_name": "United Arab Emirates",
+    "country_id": 7,
+    "country_code": "AE",
+    "country_name": "United Arab Emirates",
+    "short_name": "uae",
+    "country_flag_icon": "https://cdn.helperplace.com/country/united-arab-emirates.svg"
+    },
+    {
+    "job_location_id": 6,
+    "location_name": "State of Kuwait",
+    "country_id": 6,
+    "country_code": "KW",
+    "country_name": "Kuwait",
+    "short_name": "kuwait",
+    "country_flag_icon": "https://cdn.helperplace.com/country/kuwait.svg"
+    },
+    {
+    "job_location_id": 8,
+    "location_name": "Malaysia",
+    "country_id": 8,
+    "country_code": "MY",
+    "country_name": "Malaysia",
+    "short_name": "malaysia",
+    "country_flag_icon": "https://cdn.helperplace.com/country/malaysia.svg"
+    },
+    {
+    "job_location_id": 174,
+    "location_name": "Taiwan",
+    "country_id": 174,
+    "country_code": "TW",
+    "country_name": "Taiwan",
+    "short_name": "taiwan",
+    "country_flag_icon": "https://cdn.helperplace.com/country/taiwan.svg"
+    }
+    ],
+    "edu_course": [
+    {
+    "edu_course_id": 1,
+    "course_name": "High School Graduate"
+    },
+    {
+    "edu_course_id": 2,
+    "course_name": "High School Undergraduate"
+    },
+    {
+    "edu_course_id": 3,
+    "course_name": "College Graduate"
+    },
+    {
+    "edu_course_id": 4,
+    "course_name": "College Undergraduate"
+    },
+    {
+    "edu_course_id": 5,
+    "course_name": "University Graduate"
+    },
+    {
+    "edu_course_id": 6,
+    "course_name": "University Undergraduate"
+    },
+    {
+    "edu_course_id": 7,
+    "course_name": "Elementary School"
+    },
+    {
+    "edu_course_id": 8,
+    "course_name": "Tesda Certificate"
+    },
+    {
+    "edu_course_id": 9,
+    "course_name": "First Aid Certificate"
+    },
+    {
+    "edu_course_id": 10,
+    "course_name": "Caregiver Certificate"
+    },
+    {
+    "edu_course_id": 11,
+    "course_name": "Graduate Nurse"
+    },
+    {
+    "edu_course_id": 12,
+    "course_name": "Undergraduate Nurse"
+    },
+    {
+    "edu_course_id": 13,
+    "course_name": "Registered Nurse"
+    },
+    {
+    "edu_course_id": 14,
+    "course_name": "High School diploma"
+    },
+    {
+    "edu_course_id": 15,
+    "course_name": "hotel and restaurant management"
+    },
+    {
+    "edu_course_id": 16,
+    "course_name": "Bachelor of science in nursing"
+    },
+    {
+    "edu_course_id": 17,
+    "course_name": "Bachelor of science in business administration"
+    },
+    {
+    "edu_course_id": 18,
+    "course_name": "University"
+    },
+    {
+    "edu_course_id": 19,
+    "course_name": "High school"
+    },
+    {
+    "edu_course_id": 20,
+    "course_name": "Graduate of high school"
+    },
+    {
+    "edu_course_id": 21,
+    "course_name": "Under graduated"
+    },
+    {
+    "edu_course_id": 22,
+    "course_name": "College"
+    }
+    ],
+    "language": [
+    {
+    "language_id": 3,
+    "language_name": "English",
+    "en_language_name": "English"
+    },
+    {
+    "language_id": 2,
+    "language_name": "Cantonese",
+    "en_language_name": "Cantonese"
+    },
+    {
+    "language_id": 8,
+    "language_name": "Mandarin",
+    "en_language_name": "Mandarin"
+    },
+    {
+    "language_id": 1,
+    "language_name": "Arabic",
+    "en_language_name": "Arabic"
+    },
+    {
+    "language_id": 7,
+    "language_name": "Japanese",
+    "en_language_name": "Japanese"
+    },
+    {
+    "language_id": 4,
+    "language_name": "Filipino",
+    "en_language_name": "Filipino"
+    },
+    {
+    "language_id": 6,
+    "language_name": "Indonesian",
+    "en_language_name": "Indonesian"
+    },
+    {
+    "language_id": 5,
+    "language_name": "Hindi",
+    "en_language_name": "Hindi"
+    },
+    {
+    "language_id": 9,
+    "language_name": "Thai",
+    "en_language_name": "Thai"
+    }
+    ],
+    "family_type": [
+    {
+    "family_type_id": 1,
+    "family_type_name": "1 adult",
+    "en_family_type_name": "1 adult",
+    "member_count": 1
+    },
+    {
+    "family_type_id": 11,
+    "family_type_name": "1 adult + 1 kid",
+    "en_family_type_name": "1 adult + 1 kid",
+    "member_count": 2
+    },
+    {
+    "family_type_id": 10,
+    "family_type_name": "1 adult + 2 kids",
+    "en_family_type_name": "1 adult + 2 kids",
+    "member_count": 3
+    },
+    {
+    "family_type_id": 19,
+    "family_type_name": "1 adult + 3 kids",
+    "en_family_type_name": "1 adult + 3 kids",
+    "member_count": 4
+    },
+    {
+    "family_type_id": 20,
+    "family_type_name": "1 adult + 4 kids",
+    "en_family_type_name": "1 adult + 4 kids",
+    "member_count": 5
+    },
+    {
+    "family_type_id": 2,
+    "family_type_name": "2 adults",
+    "en_family_type_name": "2 adults",
+    "member_count": 2
+    },
+    {
+    "family_type_id": 3,
+    "family_type_name": "2 adults + 1 kid",
+    "en_family_type_name": "2 adults + 1 kid",
+    "member_count": 3
+    },
+    {
+    "family_type_id": 4,
+    "family_type_name": "2 adults + 2 kids",
+    "en_family_type_name": "2 adults + 2 kids",
+    "member_count": 4
+    },
+    {
+    "family_type_id": 5,
+    "family_type_name": "2 adults + 3 kids",
+    "en_family_type_name": "2 adults + 3 kids",
+    "member_count": 5
+    },
+    {
+    "family_type_id": 6,
+    "family_type_name": "2 adults + 4 kids",
+    "en_family_type_name": "2 adults + 4 kids",
+    "member_count": 6
+    },
+    {
+    "family_type_id": 8,
+    "family_type_name": "2 adults + 5 kids",
+    "en_family_type_name": "2 adults + 5 kids",
+    "member_count": 7
+    },
+    {
+    "family_type_id": 14,
+    "family_type_name": "3 adults",
+    "en_family_type_name": "3 adults",
+    "member_count": 3
+    },
+    {
+    "family_type_id": 12,
+    "family_type_name": "3 adults + 1 kid",
+    "en_family_type_name": "3 adults + 1 kid",
+    "member_count": 4
+    },
+    {
+    "family_type_id": 13,
+    "family_type_name": "3 adults + 2 kids",
+    "en_family_type_name": "3 adults + 2 kids",
+    "member_count": 5
+    },
+    {
+    "family_type_id": 9,
+    "family_type_name": "3 adults + 3 kids",
+    "en_family_type_name": "3 adults + 3 kids",
+    "member_count": 6
+    },
+    {
+    "family_type_id": 7,
+    "family_type_name": "3 adults + 4 kids",
+    "en_family_type_name": "3 adults + 4 kids",
+    "member_count": 7
+    },
+    {
+    "family_type_id": 16,
+    "family_type_name": "3 adults + 5 kids",
+    "en_family_type_name": "3 adults + 5 kids",
+    "member_count": 8
+    },
+    {
+    "family_type_id": 17,
+    "family_type_name": "4 adults",
+    "en_family_type_name": "4 adults",
+    "member_count": 4
+    },
+    {
+    "family_type_id": 15,
+    "family_type_name": "4 adults + 1 kid",
+    "en_family_type_name": "4 adults + 1 kid",
+    "member_count": 5
+    },
+    {
+    "family_type_id": 18,
+    "family_type_name": "4 adults + 2 kids",
+    "en_family_type_name": "4 adults + 2 kids",
+    "member_count": 6
+    },
+    {
+    "family_type_id": 21,
+    "family_type_name": "4 adults + 3 kids",
+    "en_family_type_name": "4 adults + 3 kids",
+    "member_count": 7
+    },
+    {
+    "family_type_id": 22,
+    "family_type_name": "4 adults + 4 kids",
+    "en_family_type_name": "4 adults + 4 kids",
+    "member_count": 8
+    },
+    {
+    "family_type_id": 23,
+    "family_type_name": "4 adults + 5 kids",
+    "en_family_type_name": "4 adults + 5 kids",
+    "member_count": 9
+    },
+    {
+    "family_type_id": 24,
+    "family_type_name": "5 adults",
+    "en_family_type_name": "5 adults",
+    "member_count": 5
+    },
+    {
+    "family_type_id": 25,
+    "family_type_name": "Other",
+    "en_family_type_name": "Other",
+    "member_count": 0
+    }
+    ],
+    "currency": [
+    {
+    "currency_type_id": 3,
+    "currency_name": "US Dollar",
+    "currency_symbol": "US$",
+    "country_id": 190,
+    "payment_support": 1,
+    "currency_code": "USD",
+    "base_price": 1,
+    "sort": 0
+    },
+    {
+    "currency_type_id": 1,
+    "currency_name": "Hong Kong Dollar",
+    "currency_symbol": "HK$",
+    "country_id": 1,
+    "payment_support": 1,
+    "currency_code": "HKD",
+    "base_price": 7.81655,
+    "sort": 1
+    },
+    {
+    "currency_type_id": 2,
+    "currency_name": "Singapore Dollar",
+    "currency_symbol": "SG$",
+    "country_id": 5,
+    "payment_support": 1,
+    "currency_code": "SGD",
+    "base_price": 1.3408,
+    "sort": 1
+    },
+    {
+    "currency_type_id": 5,
+    "currency_name": "Macanese Pataca",
+    "currency_symbol": "MOP$",
+    "country_id": 2,
+    "payment_support": 1,
+    "currency_code": "MOP",
+    "base_price": 8.059461,
+    "sort": 1
+    },
+    {
+    "currency_type_id": 6,
+    "currency_name": "Saudi Riyal",
+    "currency_symbol": "SAR",
+    "country_id": 4,
+    "payment_support": 1,
+    "currency_code": "SAR",
+    "base_price": 3.75066,
+    "sort": 1
+    },
+    {
+    "currency_type_id": 7,
+    "currency_name": "Qatari Rial",
+    "currency_symbol": "QAR",
+    "country_id": 3,
+    "payment_support": 0,
+    "currency_code": "QAR",
+    "base_price": 3.648829,
+    "sort": 1
+    },
+    {
+    "currency_type_id": 8,
+    "currency_name": "Kuwaiti Dinar",
+    "currency_symbol": "KWD",
+    "country_id": 6,
+    "payment_support": 0,
+    "currency_code": "KWD",
+    "base_price": 0.307823,
+    "sort": 1
+    },
+    {
+    "currency_type_id": 9,
+    "currency_name": "UAE Dirham",
+    "currency_symbol": "AED",
+    "country_id": 7,
+    "payment_support": 1,
+    "currency_code": "AED",
+    "base_price": 3.672885,
+    "sort": 1
+    },
+    {
+    "currency_type_id": 10,
+    "currency_name": "Philippines Peso",
+    "currency_symbol": "PHP",
+    "country_id": 144,
+    "payment_support": 0,
+    "currency_code": "PHP",
+    "base_price": 55.885247,
+    "sort": 1
+    },
+    {
+    "currency_type_id": 11,
+    "currency_name": "Indonesian Rupiah",
+    "currency_symbol": "IDR",
+    "country_id": 84,
+    "payment_support": 0,
+    "currency_code": "IDR",
+    "base_price": 15619.65,
+    "sort": 1
+    },
+    {
+    "currency_type_id": 12,
+    "currency_name": "Malaysian Ringgit",
+    "currency_symbol": "MYR",
+    "country_id": 8,
+    "payment_support": 1,
+    "currency_code": "MYR",
+    "base_price": 4.714,
+    "sort": 1
+    },
+    {
+    "currency_type_id": 13,
+    "currency_name": "New Taiwan Dollar",
+    "currency_symbol": "TWD",
+    "country_id": 174,
+    "payment_support": 1,
+    "currency_code": "TWD",
+    "base_price": 31.3988,
+    "sort": 1
+    }
+    ],
+    "exp_position": [
+    {
+    "id": 1,
+    "position_name": "Domestic Helper",
+    "en_position_name": "Domestic Helper"
+    },
+    {
+    "id": 2,
+    "position_name": "Driver",
+    "en_position_name": "Driver"
+    },
+    {
+    "id": 3,
+    "position_name": "Babysitter",
+    "en_position_name": "Babysitter"
+    },
+    {
+    "id": 4,
+    "position_name": "Caregiver",
+    "en_position_name": "Caregiver"
+    },
+    {
+    "id": 5,
+    "position_name": "Cook",
+    "en_position_name": "Cook"
+    },
+    {
+    "id": 6,
+    "position_name": "Gardener",
+    "en_position_name": "Gardener"
+    },
+    {
+    "id": 7,
+    "position_name": "Houseboy",
+    "en_position_name": "Houseboy"
+    },
+    {
+    "id": 8,
+    "position_name": "Midwife",
+    "en_position_name": "Midwife"
+    },
+    {
+    "id": 9,
+    "position_name": "Nanny",
+    "en_position_name": "Nanny"
+    },
+    {
+    "id": 10,
+    "position_name": "Nurse",
+    "en_position_name": "Nurse"
+    },
+    {
+    "id": 11,
+    "position_name": "Teacher",
+    "en_position_name": "Teacher"
+    },
+    {
+    "id": 12,
+    "position_name": "Security Guard",
+    "en_position_name": "Security Guard"
+    },
+    {
+    "id": 13,
+    "position_name": "Handyman",
+    "en_position_name": "Handyman"
+    },
+    {
+    "id": 14,
+    "position_name": "Housekeeper",
+    "en_position_name": "Housekeeper"
+    }
+    ],
+    "exp_duties_list": [
+    {
+    "id": 11,
+    "duty_name": "Cooking",
+    "en_duty_name": "Cooking"
+    },
+    {
+    "id": 10,
+    "duty_name": "Housekeeping",
+    "en_duty_name": "Housekeeping"
+    },
+    {
+    "id": 9,
+    "duty_name": "Driving",
+    "en_duty_name": "Driving"
+    },
+    {
+    "id": 8,
+    "duty_name": "Baby Care",
+    "en_duty_name": "Baby Care"
+    },
+    {
+    "id": 7,
+    "duty_name": "Kids Care",
+    "en_duty_name": "Kids Care"
+    },
+    {
+    "id": 6,
+    "duty_name": "Elderly Care",
+    "en_duty_name": "Elderly Care"
+    },
+    {
+    "id": 5,
+    "duty_name": "Pet Care",
+    "en_duty_name": "Pet Care"
+    },
+    {
+    "id": 4,
+    "duty_name": "Tutoring",
+    "en_duty_name": "Tutoring"
+    },
+    {
+    "id": 3,
+    "duty_name": "Gardening",
+    "en_duty_name": "Gardening"
+    },
+    {
+    "id": 2,
+    "duty_name": "Car Washing",
+    "en_duty_name": "Car Washing"
+    },
+    {
+    "id": 1,
+    "duty_name": "Marketing",
+    "en_duty_name": "Marketing"
+    }
+    ],
+    "shortlist_status": [
+    {
+    "id": 1,
+    "sts": "New",
+    "en_sts": "New"
+    },
+    {
+    "id": 2,
+    "sts": "Interested",
+    "en_sts": "Interested"
+    },
+    {
+    "id": 3,
+    "sts": "Not Interested",
+    "en_sts": "Not Interested"
+    },
+    {
+    "id": 4,
+    "sts": "Contacted",
+    "en_sts": "Contacted"
+    },
+    {
+    "id": 5,
+    "sts": "Interviewed",
+    "en_sts": "Interviewed"
+    },
+    {
+    "id": 6,
+    "sts": "Hired",
+    "en_sts": "Hired"
+    },
+    {
+    "id": 7,
+    "sts": "No show",
+    "en_sts": "No show"
+    }
+    ],
+    "candidate_duties_list": [
+    "Housekeeping",
+    "Cooking",
+    "Driving",
+    "Baby Care",
+    "Kids Care",
+    "Elderly Care",
+    "Pet Care",
+    "Tutoring",
+    "Gardening",
+    "Car Washing",
+    "Marketing"
+    ],
+    "experience_job_position": [
+    "Domestic Helper",
+    "Driver",
+    "Babysitter",
+    "Caregiver",
+    "Cook",
+    "Gardener",
+    "Handyman",
+    "Houseboy",
+    "Housekeeper",
+    "Midwife",
+    "Nanny",
+    "Nurse",
+    "Teacher",
+    "Security Guard"
+    ],
+    "employer_shortlist_status_list": [
+    "New",
+    "Interested",
+    "Not Interested",
+    "Contacted",
+    "Interviewed",
+    "Hired",
+    "No show"
+    ],
+    "resume_status": [
+    "pending",
+    "publish",
+    "expired",
+    "hidden"
+    ],
+    "job_status": [
+    "pending",
+    "preview",
+    "publish",
+    "expired",
+    "hold"
+    ],
+    "language_list": [
+    {
+    "name": "English",
+    "value": "en",
+    "google_value": "en"
+    },
+    {
+    "name": "Chinese - Simplified",
+    "value": "zh_cn",
+    "google_value": "zh_cn"
+    },
+    {
+    "name": "Chinese - Traditional",
+    "value": "zh_hk",
+    "google_value": "zh_tw"
+    },
+    {
+    "name": "Arabic",
+    "value": "ar",
+    "google_value": "ar"
+    }
+    ],
+    "candidate_country": [
+    {
+    "country_id": 1,
+    "country_name": "Hong Kong",
+    "en_country_name": "Hong Kong",
+    "country_code": "HK",
+    "job_location_id": 1,
+    "location_name": "Hong Kong",
+    "en_location_name": "Hong Kong",
+    "country_flag_icon": "https://cdn.helperplace.com/country/hong-kong.svg"
+    },
+    {
+    "country_id": 5,
+    "country_name": "Singapore",
+    "en_country_name": "Singapore",
+    "country_code": "SG",
+    "job_location_id": 5,
+    "location_name": "Singapore",
+    "en_location_name": "Singapore",
+    "country_flag_icon": "https://cdn.helperplace.com/country/singapore.svg"
+    },
+    {
+    "country_id": 2,
+    "country_name": "Macau",
+    "en_country_name": "Macau",
+    "country_code": "MO",
+    "job_location_id": 2,
+    "location_name": "Macau",
+    "en_location_name": "Macau",
+    "country_flag_icon": "https://cdn.helperplace.com/country/macau.svg"
+    },
+    {
+    "country_id": 4,
+    "country_name": "Saudi Arabia",
+    "en_country_name": "Saudi Arabia",
+    "country_code": "SA",
+    "job_location_id": 4,
+    "location_name": "Saudi Arabia",
+    "en_location_name": "Saudi Arabia",
+    "country_flag_icon": "https://cdn.helperplace.com/country/saudi-arabia.svg"
+    },
+    {
+    "country_id": 7,
+    "country_name": "United Arab Emirates",
+    "en_country_name": "United Arab Emirates",
+    "country_code": "AE",
+    "job_location_id": 7,
+    "location_name": "United Arab Emirates",
+    "en_location_name": "United Arab Emirates",
+    "country_flag_icon": "https://cdn.helperplace.com/country/united-arab-emirates.svg"
+    },
+    {
+    "country_id": 3,
+    "country_name": "Qatar",
+    "en_country_name": "Qatar",
+    "country_code": "QA",
+    "job_location_id": 3,
+    "location_name": "Qatar",
+    "en_location_name": "Qatar",
+    "country_flag_icon": "https://cdn.helperplace.com/country/qatar.svg"
+    },
+    {
+    "country_id": 6,
+    "country_name": "Kuwait",
+    "en_country_name": "Kuwait",
+    "country_code": "KW",
+    "job_location_id": 6,
+    "location_name": "State of Kuwait",
+    "en_location_name": "State of Kuwait",
+    "country_flag_icon": "https://cdn.helperplace.com/country/kuwait.svg"
+    },
+    {
+    "country_id": 8,
+    "country_name": "Malaysia",
+    "en_country_name": "Malaysia",
+    "country_code": "MY",
+    "job_location_id": 8,
+    "location_name": "Malaysia",
+    "en_location_name": "Malaysia",
+    "country_flag_icon": "https://cdn.helperplace.com/country/malaysia.svg"
+    },
+    {
+    "country_id": 9,
+    "country_name": "India",
+    "en_country_name": "India",
+    "country_code": "IN",
+    "job_location_id": null,
+    "location_name": null,
+    "en_location_name": null,
+    "country_flag_icon": "https://cdn.helperplace.com/country/india.svg"
+    },
+    {
+    "country_id": 37,
+    "country_name": "Cambodia",
+    "en_country_name": "Cambodia",
+    "country_code": "KH",
+    "job_location_id": null,
+    "location_name": null,
+    "en_location_name": null,
+    "country_flag_icon": "https://cdn.helperplace.com/country/cambodia.svg"
+    },
+    {
+    "country_id": 84,
+    "country_name": "Indonesia",
+    "en_country_name": "Indonesia",
+    "country_code": "ID",
+    "job_location_id": null,
+    "location_name": null,
+    "en_location_name": null,
+    "country_flag_icon": "https://cdn.helperplace.com/country/indonesia.svg"
+    },
+    {
+    "country_id": 127,
+    "country_name": "Myanmar-Burma",
+    "en_country_name": "Myanmar-Burma",
+    "country_code": "MM",
+    "job_location_id": null,
+    "location_name": null,
+    "en_location_name": null,
+    "country_flag_icon": "https://cdn.helperplace.com/country/myanmar-burma.svg"
+    },
+    {
+    "country_id": 144,
+    "country_name": "Philippines",
+    "en_country_name": "Philippines",
+    "country_code": "PH",
+    "job_location_id": null,
+    "location_name": null,
+    "en_location_name": null,
+    "country_flag_icon": "https://cdn.helperplace.com/country/philippines.svg"
+    },
+    {
+    "country_id": 167,
+    "country_name": "Sri Lanka",
+    "en_country_name": "Sri Lanka",
+    "country_code": "LK",
+    "job_location_id": null,
+    "location_name": null,
+    "en_location_name": null,
+    "country_flag_icon": "https://cdn.helperplace.com/country/sri-lanka.svg"
+    },
+    {
+    "country_id": 174,
+    "country_name": "Taiwan",
+    "en_country_name": "Taiwan",
+    "country_code": "TW",
+    "job_location_id": 174,
+    "location_name": "Taiwan",
+    "en_location_name": "Taiwan",
+    "country_flag_icon": "https://cdn.helperplace.com/country/taiwan.svg"
+    },
+    {
+    "country_id": 177,
+    "country_name": "Thailand",
+    "en_country_name": "Thailand",
+    "country_code": "TH",
+    "job_location_id": null,
+    "location_name": null,
+    "en_location_name": null,
+    "country_flag_icon": "https://cdn.helperplace.com/country/thailand.svg"
+    }
+    ]
+    },
+    "message": "Record Found."
+    }
