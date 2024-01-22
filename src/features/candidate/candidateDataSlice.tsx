@@ -7,8 +7,8 @@ export interface Parameter {
   length: number;
   helper_name?: string;
   start_date?: Date;
-  job_type_id?: number;
-  country_id?: number;
+  job_type_id?: string;
+  country_id?: string;
   position_id?: number;
   nationality_id?: number;
   edu_id?: number;
