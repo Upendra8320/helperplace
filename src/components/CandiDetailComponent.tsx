@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import locationlogo from "../assets/helperlocationlogo.webp";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { fetchCandidatesAction } from "../features/candidate/candidateDataSlice";
+import { fetchMasterDataAction } from "../features/masterData/masterDataSlice";
 
 const CandiDetailComponent = () => {
   const dispatch = useAppDispatch();
   const { data, currentPage, pageSize, totalRecords, isLoading, error }: any =
     useAppSelector((state) => state.candidatealldata);
+  const { data: masterdata }: any = useAppSelector((state) => state.masterdata);
+  console.log(masterdata);
 
   console.log(data);
   useEffect(() => {
@@ -18,6 +21,7 @@ const CandiDetailComponent = () => {
         // Add other filters as needed
       })
     );
+    dispatch(fetchMasterDataAction());
   }, [dispatch, currentPage, pageSize]);
 
   if (isLoading) {
@@ -28,11 +32,16 @@ const CandiDetailComponent = () => {
     return <p>Error: {error}</p>;
   }
 
+
+
   return (
     <div className="flex flex-col w-full h-full">
       {data.map((candidate: any) => {
         return (
-          <div className="my-4 border-[1px] rounded-md" key={candidate.id}>
+          <div
+            className="my-4 border-[1px] rounded-md"
+            key={candidate.resume_id}
+          >
             {/* //details component */}
             <div className="flex box-border items-center">
               {/* img */}
@@ -57,17 +66,27 @@ const CandiDetailComponent = () => {
                     </h5>
                     <h5 className="flex">
                       <img className="w-6" src={locationlogo} alt="" />{" "}
-                      <span>Location</span>
+                      <span>{masterdata.candidate_country((items)=>{
+                        return items>
+                      })}</span>
+                      {/* candidate.current_country_id */}
                     </h5>
                   </div>
                   <div className="hidden lg:block">{candidate.meta_data}</div>
                   <div className="lg:flex ">
                     <h5 className="text-blue-900 font-semibold mx-2">
-                      4 Year experience
+                      {candidate.experience_year} Year experience
                     </h5>
                     <h5 className="text-blue-900 font-semibold mx-4">
-                      {" "}
-                      From 10 Mar 2024 | Full Time{" "}
+                      From{" "}
+                      {new Date(
+                        candidate.next_job_available_date
+                      ).toLocaleDateString("en-US", {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                      })}{" "}
+                      | Full Time{" "}
                     </h5>
                     <h5
                       className={`${
