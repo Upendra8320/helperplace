@@ -10,6 +10,7 @@ const api = axios.create({
 export const fetchCandidates = async (params:{}) => {
   try {
     const response = await api.get('/mobile/candidate/FindCandidate', { params });
+    // const response = await api.get('/mobile/candidate/FindCandidate', { params });
     return response.data;
   } catch (error) {
     throw error;
