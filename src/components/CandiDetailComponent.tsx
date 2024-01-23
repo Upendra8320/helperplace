@@ -3,21 +3,19 @@ import locationlogo from "../assets/helperlocationlogo.webp";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { fetchCandidatesAction } from "../features/candidate/candidateDataSlice";
 import { fetchMasterDataAction } from "../features/masterData/masterDataSlice";
+import { Link } from "react-router-dom";
 
 const CandiDetailComponent = () => {
 
-  const [jobid, setJobId] = useState(0)
   const dispatch = useAppDispatch();
   const { data, currentPage, pageSize, totalRecords, isLoading, error }: any =
     useAppSelector((state) => state.candidatealldata);
   const { data: masterdata }: any = useAppSelector((state) => state.masterdata);
   console.log("masterdata", masterdata);
-  console.log(data);
+  console.log("candidateData",data);
+  console.log('data: ', data[0].resume_url);
 
-const jobsearch = ()=>{
-  const val = 2
-  setJobId(val);
-}
+
 
   useEffect(() => {
     dispatch(
@@ -29,7 +27,7 @@ const jobsearch = ()=>{
       })
     );
     dispatch(fetchMasterDataAction());
-  }, [dispatch, currentPage, pageSize,jobid]);
+  }, [dispatch, currentPage, pageSize]);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -41,7 +39,6 @@ const jobsearch = ()=>{
 
   return (
     <>
-    <button onClick={jobsearch}></button>
       <div className="flex flex-col w-full h-full">
         {data.map((candidate: any) => {
           return (
@@ -63,7 +60,7 @@ const jobsearch = ()=>{
                 </div>
                 {/* info */}
                 <div className="candi-info box-border h-full pl-2 lg:">
-                  <a href="">
+                  <Link to={`/resume/${candidate.resume_url}`}>
                     <h4 className="text-[18px] text-blue-900 font-medium">
                       {candidate.helper_name} - {candidate.age}
                     </h4>
@@ -130,7 +127,7 @@ const jobsearch = ()=>{
                         Very Active
                       </h5>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
