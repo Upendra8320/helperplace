@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import locationlogo from "../assets/helperlocationlogo.webp";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
+
 import {
   fetchCandidatesAction,
   setCurrentPage,
@@ -16,9 +17,20 @@ const CandiDetailComponent = () => {
   console.log("masterdata", masterdata);
   console.log("candidateData", data);
 
+  const [selectedValue, setSelectedValue] = useState("");
+
+  //function to hanlde change page
   const handlePageChange = (newPage: number) => {
     dispatch(setCurrentPage(newPage));
   };
+
+  //handle select option
+  const handleSelectChange = (event: any) => {
+    setSelectedValue(event.target.value);
+    console.log(event.target.value)
+
+  };
+
   const totalPages = Math.ceil(totalRecords / pageSize);
 
   useEffect(() => {
@@ -27,10 +39,11 @@ const CandiDetailComponent = () => {
         start: (currentPage - 1) * pageSize,
         length: pageSize,
         helper_name: "",
+        order_by: selectedValue,
       })
     );
     dispatch(fetchMasterDataAction());
-  }, [dispatch, currentPage, pageSize]);
+  }, [dispatch, currentPage, pageSize, selectedValue]);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -43,6 +56,23 @@ const CandiDetailComponent = () => {
   return (
     <>
       <div className="flex flex-col w-full h-full">
+        {/* <button onClick={()=>setLastActive("publish_date")}>Available_from</button> */}
+        <div className="mt-2 w-full flex lg:justify-end">
+          <div>
+          <label htmlFor="mySelect" className="text-blue-900 font-medium">Order By :</label>
+          <select
+          className="border-[1px] bg-gray-100 ml-2 px-2 text-[14px] py-1"
+            id="mySelect"
+            value={selectedValue}
+            onChange={handleSelectChange}
+          >
+            <option>Select Option..</option>
+            <option value="last_active">Last Active</option>
+            <option value="available_from">Available From</option>
+            <option value="publish_date">Publish Date</option>
+          </select>
+          </div>
+        </div>
         {data.map((candidate: any) => {
           return (
             <div
@@ -147,15 +177,17 @@ const CandiDetailComponent = () => {
         <div className="w-full">
           <div className="flex items-center justify-center">
             <button
-            className="mx-4 font-medium border-[1px] rounded-md p-2 hover:text-white hover:bg-gray-600 w-[80px]"
+              className="mx-4 font-medium border-[1px] rounded-md p-2 hover:text-white hover:bg-gray-600 w-[80px]"
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
             >
               Previous
             </button>
-            <span className="mx-2 font-medium">{currentPage}</span> {<strong>of</strong>} <span className="mx-2 font-medium">{totalPages}</span>
+            <span className="mx-2 font-medium">{currentPage}</span>{" "}
+            {<strong>of</strong>}{" "}
+            <span className="mx-2 font-medium">{totalPages}</span>
             <button
-            className="mx-4 font-medium border-[1px] rounded-md p-2 hover:text-white hover:bg-gray-600 w-[80px]"
+              className="mx-4 font-medium border-[1px] rounded-md p-2 hover:text-white hover:bg-gray-600 w-[80px]"
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
             >
