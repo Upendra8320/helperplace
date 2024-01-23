@@ -4,7 +4,7 @@ import { fetchCandidatesAction, setCurrentPage } from '../features/candidate/can
 
 
 
-const CandidatePagecomponent = () => {
+const CandidatePage = () => {
   const dispatch = useAppDispatch();
   const { data, currentPage, pageSize, totalRecords, isLoading, error } = useAppSelector(
     (state) => state.candidatealldata
@@ -56,5 +56,5 @@ console.log(data)
   );
 };
 
-export default CandidatePagecomponent;
+export default CandidatePage;
 

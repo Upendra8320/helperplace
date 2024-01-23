@@ -16,3 +16,13 @@ export const fetchCandidates = async (params:{}) => {
     throw error;
   }
 };
+
+
+export const fetchResume = async(params:{})=>{
+  try{
+    const response = await api.get('/mobile/resume/GetResumeByUrl',{params})
+    return response.data
+  }catch(error){
+    throw error;
+  }
+}

@@ -1,21 +1,25 @@
 import { useEffect, useState } from "react";
 import locationlogo from "../assets/helperlocationlogo.webp";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { fetchCandidatesAction } from "../features/candidate/candidateDataSlice";
+import {
+  fetchCandidatesAction,
+  setCurrentPage,
+} from "../features/candidate/candidateDataSlice";
 import { fetchMasterDataAction } from "../features/masterData/masterDataSlice";
 import { Link } from "react-router-dom";
 
 const CandiDetailComponent = () => {
-
   const dispatch = useAppDispatch();
   const { data, currentPage, pageSize, totalRecords, isLoading, error }: any =
     useAppSelector((state) => state.candidatealldata);
-  const { data: masterdata }: any = useAppSelector((state) => state.masterdata);
+  const { data: masterdata }: any = useAppSelector((state) => state.masterData);
   console.log("masterdata", masterdata);
-  console.log("candidateData",data);
-  console.log('data: ', data[0].resume_url);
+  console.log("candidateData", data);
 
-
+  const handlePageChange = (newPage: number) => {
+    dispatch(setCurrentPage(newPage));
+  };
+  const totalPages = Math.ceil(totalRecords / pageSize);
 
   useEffect(() => {
     dispatch(
@@ -23,7 +27,6 @@ const CandiDetailComponent = () => {
         start: (currentPage - 1) * pageSize,
         length: pageSize,
         helper_name: "",
-        
       })
     );
     dispatch(fetchMasterDataAction());
@@ -66,31 +69,37 @@ const CandiDetailComponent = () => {
                     </h4>
                     <div className="flex flex-wrap my-1">
                       <h5 className="font-medium text-gray-500 text-[14px]">
-                        {masterdata.job_position.map((items: any) => {
-                          if (items.job_position_id === candidate.position_id) {
-                            return items.position_name;
-                          }
-                        })}
+                        {masterdata.job_position &&
+                          masterdata.job_position.map((items: any) => {
+                            if (
+                              items.job_position_id === candidate.position_id
+                            ) {
+                              return items.position_name;
+                            }
+                          })}
                         -{" "}
-                        {masterdata.contract_status.map((items: any) => {
-                          if (
-                            items.contract_sts_id ===
-                            candidate.contract_status_id
-                          ) {
-                            return items.contract_sts_name;
-                          }
-                        })}
+                        {masterdata.contract_status &&
+                          masterdata.contract_status.map((items: any) => {
+                            if (
+                              items.contract_sts_id ===
+                              candidate.contract_status_id
+                            ) {
+                              return items.contract_sts_name;
+                            }
+                          })}
                       </h5>
                       <h5 className="flex">
                         <img className="w-6" src={locationlogo} alt="" />{" "}
                         <span>
-                          {masterdata.candidate_country.map((items: any) => {
-                            if (
-                              items.country_id === candidate.current_country_id
-                            ) {
-                              return items.country_name;
-                            }
-                          })}
+                          {masterdata.candidate_country &&
+                            masterdata.candidate_country.map((items: any) => {
+                              if (
+                                items.country_id ===
+                                candidate.current_country_id
+                              ) {
+                                return items.country_name;
+                              }
+                            })}
                         </span>
                       </h5>
                     </div>
@@ -111,11 +120,12 @@ const CandiDetailComponent = () => {
                           year: "numeric",
                         })}{" "}
                         |{" "}
-                        {masterdata.job_type.map((items: any) => {
-                          if (items.job_type_id === candidate.job_type_id) {
-                            return items.job_type_name;
-                          }
-                        })}
+                        {masterdata.job_type &&
+                          masterdata.job_type.map((items: any) => {
+                            if (items.job_type_id === candidate.job_type_id) {
+                              return items.job_type_name;
+                            }
+                          })}
                       </h5>
                       <h5
                         className={`${
@@ -133,6 +143,26 @@ const CandiDetailComponent = () => {
             </div>
           );
         })}
+        {/* pagination */}
+        <div className="w-full">
+          <div className="flex items-center justify-center">
+            <button
+            className="mx-4 font-medium border-[1px] rounded-md p-2 hover:text-white hover:bg-gray-600 w-[80px]"
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
+            <span className="mx-2 font-medium">{currentPage}</span> {<strong>of</strong>} <span className="mx-2 font-medium">{totalPages}</span>
+            <button
+            className="mx-4 font-medium border-[1px] rounded-md p-2 hover:text-white hover:bg-gray-600 w-[80px]"
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );
