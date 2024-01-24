@@ -22,10 +22,10 @@ const Resume = () => {
 
   const myData = data.resume_detail;
 
-  console.log(
-    "resume_url",
-    `${encodedLocation}/${encodedPosition}/${encodedName}/${encodedResumeNo}`
-  );
+  // console.log(
+  //   "resume_url",
+  //   `${encodedLocation}/${encodedPosition}/${encodedName}/${encodedResumeNo}`
+  // );
   useEffect(() => {
     dispatch(
       fetchCandidatesResume({

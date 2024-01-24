@@ -20,7 +20,7 @@ export interface Parameter {
   experience_min?: number; // Updated from 0
   experience_max?: number;
   marital_status?: string;
-  order_by?: string;
+  order_by?: string | null | undefined;
   location_order?: number; // Updated from 0
   lang?: string;
 }
@@ -44,7 +44,7 @@ interface CandidatesState {
 
 const initialState: CandidatesState = {
   data: [],
-  currentPage: 1,
+  currentPage: 0,
   pageSize: 20,
   totalRecords: 0,
   isLoading: false,
