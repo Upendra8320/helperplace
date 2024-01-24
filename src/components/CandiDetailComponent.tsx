@@ -8,7 +8,7 @@ import {
 } from "../features/candidate/candidateDataSlice";
 import { fetchMasterDataAction } from "../features/masterData/masterDataSlice";
 import { Link, useSearchParams } from "react-router-dom";
-import Filter from "./Filter";
+import Filter from "./filter";
 
 const CandiDetailComponent = () => {
   const dispatch = useAppDispatch();
@@ -37,7 +37,7 @@ const CandiDetailComponent = () => {
   const handleSelectChange = (event: any) => {
     const newSelectedValue = event.target.value;
     setSearchParams({ order_by: newSelectedValue });
-    dispatch(setCurrentPage(1)); // Reset to the first page
+    dispatch(setCurrentPage(0)); // Reset to the first page
   };
 
  
@@ -51,13 +51,14 @@ const CandiDetailComponent = () => {
         setSearchParams({job_position: newtext})
       }
     })
-    dispatch(setCurrentPage(1)); // Reset to the first page
+    dispatch(setCurrentPage(0)); // Reset to the first page
   };
 
   //handle startdate filter
   const selectDate = (event:any)=>{
     const {value } = event.target
     setSearchParams({start_date : value});
+    dispatch(setCurrentPage(0)); // Reset to the first page
   }
   
 
@@ -71,6 +72,7 @@ masterdata.job_type.map((items:any)=>{
     setSearchParams({job_type: newtext})
   }
 })
+dispatch(setCurrentPage(0)); // Reset to the first page
   }
 
 
@@ -131,6 +133,7 @@ masterdata.job_type.map((items:any)=>{
           <div className="lg:w-[30%] my-4">
             <Filter
               MasterData={masterdata}
+              SearchParamters = {searchParams}
               selectedJobPosition={jobPosition}
               Positiononchange={handleJobPositionChange}
               selectdate={selectDate}
