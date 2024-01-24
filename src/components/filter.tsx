@@ -1,10 +1,13 @@
+import React from "react";
 import { GrPowerReset } from "react-icons/gr";
 
-const Filter = ({ MasterData, selectedJobPosition, Positiononchange,selectdate,datevalue,selectedJobType, JobTypeonChange}) => {
+const Filter = React.memo(({ MasterData, SearchParamters, selectedJobPosition, Positiononchange,selectdate,datevalue,selectedJobType, JobTypeonChange}) => {
   console.log("selectedDate: ", datevalue);
 
   const handleReset = () => {
     Positiononchange("");
+    JobTypeonChange("")
+    SearchParamters("")
   };
 
   return (
@@ -37,7 +40,7 @@ const Filter = ({ MasterData, selectedJobPosition, Positiononchange,selectdate,d
                     className="mr-2"
                     id={`jobPos-${items.job_position_id}`}
                     type="radio"
-                    name="jobPosition"
+                    name="jobType"
                     checked={selectedJobPosition === items.job_position_id}
                     onChange={() => Positiononchange(items.job_position_id)}
                   />
@@ -93,6 +96,6 @@ const Filter = ({ MasterData, selectedJobPosition, Positiononchange,selectdate,d
       </form>
     </div>
   );
-};
+});
 
 export default Filter;
