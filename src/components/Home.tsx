@@ -7,9 +7,7 @@ const Home = () => {
     (state ) => (console.log(state.candidatedata.data))
     
   );
-  const loading = useAppSelector(
-    (state) => state.candidatedata.loading
-  );
+  
   const error = useAppSelector((state) => state.candidatedata.error);
 
 

@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import candidateData from "../features/candidate/candidateSlice"
-import candidateDatas from "../features/candidate/candidateDataSlice"
+// import candidateData from "../features/candidate/candidateSlice"
+import candidateData from "../features/candidate/candidateDataSlice"
 import masterData from "../features/masterData/masterDataSlice"
 import resumeSlice from "../features/resumeData/resumeSlice";
 
@@ -8,7 +8,7 @@ import resumeSlice from "../features/resumeData/resumeSlice";
 const store = configureStore({
     reducer: {
         candidatedata: candidateData,
-        candidatealldata: candidateDatas,
+        candidateAllData: candidateData,
         masterData: masterData,
         resumeData: resumeSlice,
         
