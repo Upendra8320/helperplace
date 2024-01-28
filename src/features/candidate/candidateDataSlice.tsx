@@ -5,16 +5,16 @@ import { fetchCandidates } from '../../apiService';
 export interface Parameter {
   start: number;
   length: number;
-  helper_name?: string;
-  start_date?: Date;
-  job_type_id?: string;
-  country_id?: string;
+  helper_name?: string | null;
+  start_date?: Date | null;
+  job_type_id?: number;
+  country_id?: number;
   position_id?: number;
   nationality_id?: number;
   edu_id?: number;
   contract_status_id?: number;
-  resume_manager?: string;
-  gender?: string;
+  resume_manager?: string | null;
+  gender?: string | null;
   age_min?: number;
   age_max?: number;
   experience_min?: number; // Updated from 0

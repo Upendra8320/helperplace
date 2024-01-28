@@ -12,17 +12,19 @@ import { Link, useSearchParams } from "react-router-dom";
 const CandiDetailComponent = () => {
   const [searchParam, setSearchParam] = useSearchParams();
   const job_position = searchParam.get("job_position");
-  const start_date = searchParam.get("start_date")
-  const job_type = searchParam.get("job_type")
-  const resume_manager = searchParam.get("resume_manager")
-  const gender = searchParam.get("gender")
-  const helperName = searchParam.get("helper_name")
-  console.log(job_position);
+  const start_date = searchParam.get("start_date");
+  const job_type = searchParam.get("job_type");
+  const resume_manager = searchParam.get("resume_manager");
+  const gender = searchParam.get("gender");
+  const helperName = searchParam.get("helper_name");
+  const orderBY = searchParam.get("order_by");
+  // console.log(job_position);
+  console.log("orderBy",orderBY)
 
   const dispatch = useAppDispatch();
   const [jobPosId, setJobPosId] = useState();
-  const [jobTypeId,setJobTypeId] = useState();
-  console.log('jobTypeId: ', jobTypeId);
+  const [jobTypeId, setJobTypeId] = useState();
+  // console.log("jobTypeId: ", jobTypeId);
 
   //fetching candidate data
   const { data, currentPage, pageSize, totalRecords, isLoading, error }: any =
@@ -33,30 +35,33 @@ const CandiDetailComponent = () => {
   // console.log("masterdata", masterdata);
   // console.log("candidateData", data);
 
-   
   useEffect(() => {
-    if(job_position){
-    masterData.job_position && masterData.job_position.map((element: any) => {
-      const text = job_position;
-      const newtext = text?.split("-").join(" ");
-      if (element.position_name === newtext) {
-        setJobPosId(element.job_position_id);
-      }
-    });
-  }
-  if(job_type){
-    masterData.job_type && masterData.job_type.map((element: any) => {
-      const text = job_type;
-      const newtext = text?.split("-").join(" ");
-      if (element.job_type_name === newtext) {
-        setJobTypeId(element.job_type_id);
-      }
-    });
-  }
-  }, [job_position,job_type]);
+    if (job_position) {
+      masterData.job_position &&
+        masterData.job_position.map((element: any) => {
+          const text = job_position;
+          const newtext = text?.split("-").join(" ");
+          if (element.position_name === newtext) {
+            setJobPosId(element.job_position_id);
+          }
+        });
+    }
+    if (job_type) {
+      masterData.job_type &&
+        masterData.job_type.map((element: any) => {
+          const text = job_type;
+          const newtext = text?.split("-").join(" ");
+          if (element.job_type_name === newtext) {
+            setJobTypeId(element.job_type_id);
+          }
+        });
+    }
+  }, [job_position, job_type]);
 
   //function to hanlde change page
   const handlePageChange = (newPage: number) => {
+    searchParam.set("page",newPage+1)
+    setSearchParam(searchParam)
     dispatch(setCurrentPage(newPage));
   };
 
@@ -69,13 +74,24 @@ const CandiDetailComponent = () => {
         length: pageSize,
         helper_name: helperName,
         position_id: jobPosId,
-        start_date:start_date,
+        start_date: start_date,
         job_type_id: jobTypeId,
-        resume_manager:resume_manager,
-        gender:gender
+        resume_manager: resume_manager,
+        gender: gender,
+        order_by: orderBY,
       })
     );
-  }, [dispatch, currentPage, jobPosId,start_date,jobTypeId,resume_manager,gender,helperName]);
+  }, [
+    dispatch,
+    currentPage,
+    jobPosId,
+    start_date,
+    jobTypeId,
+    resume_manager,
+    gender,
+    helperName,
+    orderBY
+  ]);
 
   useEffect(() => {
     dispatch(fetchMasterDataAction());
