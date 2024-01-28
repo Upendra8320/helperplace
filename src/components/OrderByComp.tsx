@@ -7,7 +7,8 @@ import {
 const OrderByComp = () => {
   const dispatch = useAppDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
-  const selectedValue = searchParams.get("order_by");
+  let selectedValue = searchParams.get("order_by");
+  
 
   //handle select option
   const handleSelectChange = (event: any) => {
@@ -26,7 +27,7 @@ const OrderByComp = () => {
         <select
           className="border-[1px] bg-gray-100 ml-2 px-2 text-[14px] py-1"
           id="mySelect"
-          value={selectedValue}
+          value={selectedValue ? selectedValue : ""}
           onChange={(event)=>(handleSelectChange(event))}
         >
           <option value="last_active">Last Active</option>

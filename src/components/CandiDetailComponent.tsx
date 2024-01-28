@@ -1,3 +1,5 @@
+//problems 1. when reload the page jobType and jobPos becomes undefined fix it and then that does not passess in the useffect
+
 import { useEffect, useState } from "react";
 import locationLogo from "../assets/helperlocationlogo.webp";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
@@ -10,21 +12,22 @@ import { fetchMasterDataAction } from "../features/masterData/masterDataSlice";
 import { Link, useSearchParams } from "react-router-dom";
 
 const CandiDetailComponent = () => {
+  const [jobPosId, setJobPosId] = useState();
+  const [jobTypeId, setJobTypeId] = useState();
+
   const [searchParam, setSearchParam] = useSearchParams();
   const job_position = searchParam.get("job_position");
+  console.log("job_position usesearch", job_position);
   const start_date = searchParam.get("start_date");
   const job_type = searchParam.get("job_type");
   const resume_manager = searchParam.get("resume_manager");
   const gender = searchParam.get("gender");
   const helperName = searchParam.get("helper_name");
   const orderBY = searchParam.get("order_by");
-  // console.log(job_position);
-  console.log("orderBy",orderBY)
 
   const dispatch = useAppDispatch();
-  const [jobPosId, setJobPosId] = useState();
-  const [jobTypeId, setJobTypeId] = useState();
-  // console.log("jobTypeId: ", jobTypeId);
+  console.log("jobpos", jobPosId);
+  console.log("jobtype", jobTypeId);
 
   //fetching candidate data
   const { data, currentPage, pageSize, totalRecords, isLoading, error }: any =
@@ -32,10 +35,14 @@ const CandiDetailComponent = () => {
 
   //fetching masterdata
   const { data: masterData }: any = useAppSelector((state) => state.masterData);
-  // console.log("masterdata", masterdata);
-  // console.log("candidateData", data);
+
+  //master data useeffect
+  useEffect(() => {
+    dispatch(fetchMasterDataAction());
+  }, []);
 
   useEffect(() => {
+  // const job_position = searchParam.get("job_position");
     if (job_position) {
       masterData.job_position &&
         masterData.job_position.map((element: any) => {
@@ -60,8 +67,9 @@ const CandiDetailComponent = () => {
 
   //function to hanlde change page
   const handlePageChange = (newPage: number) => {
-    searchParam.set("page",newPage+1)
-    setSearchParam(searchParam)
+    let page = newPage + 1;
+    searchParam.set("page", JSON.stringify(page));
+    setSearchParam(searchParam);
     dispatch(setCurrentPage(newPage));
   };
 
@@ -92,10 +100,6 @@ const CandiDetailComponent = () => {
     helperName,
     orderBY
   ]);
-
-  useEffect(() => {
-    dispatch(fetchMasterDataAction());
-  }, []);
 
   if (isLoading) {
     return <p>Loading...</p>;

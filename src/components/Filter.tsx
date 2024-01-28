@@ -10,23 +10,26 @@ const Filter = React.memo(() => {
   const dispatch = useAppDispatch();
   const { data: masterdata }: any = useAppSelector((state) => state.masterData);
 
-  const [jobPosition, setJobPosition] = useState();
-  const [jobType, setJobType] = useState();
+  // const [jobPosition, setJobPosition] = useState();
+  // const [jobType, setJobType] = useState();
   // const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   // console.log('selectedSkills: ', selectedSkills);
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedDate = searchParams.get("start_date");
   const ResumeByValue = searchParams.get("resume_manager");
   const gender = searchParams.get("gender");
+  const helperName = searchParams.get("helper_name");
+  const jobPosition = searchParams.get("job_position")?.split("-").join(" ");
+  const jobType = searchParams.get("job_type")?.split("-").join(" ");
 
   // handle jobposition filter
   const handleJobPositionChange = (jobPositionId: any) => {
-    setJobPosition(jobPositionId);
     masterdata.job_position.map((items: any) => {
       if (items.job_position_id == jobPositionId) {
         const text = items.position_name;
         const newtext = text.split(" ").join("-");
         searchParams.set("job_position", newtext);
+        searchParams.set("page", "1");
         setSearchParams(searchParams);
       }
     });
@@ -37,22 +40,20 @@ const Filter = React.memo(() => {
   const selectDate = (event: any) => {
     const { value } = event.target;
     searchParams.set("start_date", value);
-    searchParams.set("page", 1);
+    searchParams.set("page", "1");
     setSearchParams(searchParams);
     dispatch(setCurrentPage(0)); // Reset to the first page
   };
 
   //handle jobType
   const handleJobType = (jobTypeId: any) => {
-    setJobType(jobTypeId);
     masterdata.job_type.map((items: any) => {
       if (items.job_type_id == jobTypeId) {
         const text = items.job_type_name;
         const newtext = text.split(" ").join("-");
         searchParams.set("job_type", newtext);
-        searchParams.set("page", 1);
+        searchParams.set("page", "1");
         setSearchParams(searchParams);
-        console.log("searchParams: ", searchParams);
       }
     });
     dispatch(setCurrentPage(0)); // Reset to the first page
@@ -61,12 +62,15 @@ const Filter = React.memo(() => {
   //handle resumeby function
   const Resumebyfunction = (resumeby: any) => {
     searchParams.set("resume_manager", resumeby);
+    searchParams.set("page", "1");
     setSearchParams(searchParams);
     dispatch(setCurrentPage(0)); // Reset to the first page
   };
+
   //handle gender function
   const genderFunction = (gender: any) => {
     searchParams.set("gender", gender);
+    searchParams.set("page", "1");
     setSearchParams(searchParams);
     dispatch(setCurrentPage(0)); // Reset to the first page
   };
@@ -106,11 +110,10 @@ const Filter = React.memo(() => {
 
   const handleReset = () => {};
 
-
   //age range selector state and function
   const [range, setRange] = useState([20, 80]);
 
-  const handleRangeChange = (newRange:any) => {
+  const handleRangeChange = (newRange: any) => {
     setRange(newRange);
   };
   const Resumeby = [
@@ -165,7 +168,7 @@ const Filter = React.memo(() => {
                     id={`jobPos-${items.job_position_id}`}
                     type="radio"
                     name="jobPos"
-                    checked={jobPosition === items.job_position_id}
+                    checked={jobPosition === items.position_name}
                     onChange={() =>
                       handleJobPositionChange(items.job_position_id)
                     }
@@ -185,9 +188,9 @@ const Filter = React.memo(() => {
           <div className="w-full">
             <input
               className="border-[2px] w-full py-1 px-3 rounded-md"
+              value={selectedDate ? selectedDate : ""}
               type="date"
               onChange={(event) => selectDate(event)}
-              // onChange={selectDate}
             />
           </div>
         </div>
@@ -233,7 +236,7 @@ const Filter = React.memo(() => {
                     id={`jobType-${items.job_type_id}`}
                     type="radio"
                     name="jobType"
-                    checked={jobType === items.job_type_id}
+                    checked={jobType === items.job_type_name}
                     onChange={() => handleJobType(items.job_type_id)}
                   />
 
@@ -316,7 +319,7 @@ const Filter = React.memo(() => {
             <input
               className="border-[1px] mt-1 border-gray-400 p-1 placeholder:pl-1"
               type="text"
-              name="helper_name"
+              name="name"
               id="name"
               onChange={handleNameSearch}
               onKeyDown={handleNameSearch}
