@@ -10,13 +10,13 @@ const Navbar = () => {
     }
   return (
     <>
-    <nav className="lg:px-5 sticky relative border-b-[1px] border-gray-100 2xl:w-[80%] m-auto">
+    <nav className="lg:px-5 sticky top-0 border-b-[1px] border-gray-100 2xl:w-[80%] m-auto bg-white z-[1000]">
       <div className="hidden lg:flex xl:w-[80%] lg:mx-auto lg:items-center lg:justify-between h-[60px]">
         {/* hidden below 786px */}
         <div className="hidden lg:block">
-          <img className="max-w-[180px]" src={helperplacelogo} alt="" />
+         <Link to="/find-candidate"><img className="max-w-[180px]" src={helperplacelogo} alt="" /></Link> 
         </div>
-        <div className="hidden lg:block lg:flex lg:w-[100%] lg:justify-between lg:px-10 lg:items-center xl:px-4">
+        <div className="hidden lg:flex lg:w-[100%] lg:justify-between lg:px-10 lg:items-center xl:px-4">
           <div className="w-auto">
             <Link className="font-medium text-[1rem] lg:mx-2 xl:mx-4" to="/">
               JOBS
@@ -48,7 +48,7 @@ const Navbar = () => {
         </div>
         <div className="w-[100%] flex justify-between items-center m-auto">
           <div className="m-auto">
-            <img className="max-w-[180px]" src={helperplacelogo} alt="helperplacelogo" />
+          <Link to="/find-candidate"> <img className="max-w-[180px]" src={helperplacelogo} alt="helperplacelogo" /></Link> 
           </div>
         </div>
       </div>

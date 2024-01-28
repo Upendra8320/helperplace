@@ -1,47 +1,35 @@
 import React, { useState } from "react";
 import { GrPowerReset } from "react-icons/gr";
-import {
-  fetchCandidatesAction,
-  setCurrentPage,
-} from "../features/candidate/candidateDataSlice";
+import { setCurrentPage } from "../features/candidate/candidateDataSlice";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { useSearchParams } from "react-router-dom";
-import { OrderByComp } from "./OrderByComp";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
 const Filter = React.memo(() => {
-  // console.log("selectedDate: ", datevalue);
   const dispatch = useAppDispatch();
   const { data: masterdata }: any = useAppSelector((state) => state.masterData);
 
-  const [jobPosition, setJobPosition] = useState();
-  const [jobType, setJobType] = useState();
+  // const [jobPosition, setJobPosition] = useState();
+  // const [jobType, setJobType] = useState();
   // const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   // console.log('selectedSkills: ', selectedSkills);
   const [searchParams, setSearchParams] = useSearchParams();
-  const selectedValue = searchParams.get("order_by");
   const selectedDate = searchParams.get("start_date");
   const ResumeByValue = searchParams.get("resume_manager");
   const gender = searchParams.get("gender");
   const helperName = searchParams.get("helper_name");
-
-  //handle select option
-  const handleSelectChange = (event: any) => {
-    const newSelectedValue = event.target.value;
-    searchParams.set("order_by", newSelectedValue);
-    setSearchParams(searchParams);
-    dispatch(setCurrentPage(0)); // Reset to the first page
-  };
+  const jobPosition = searchParams.get("job_position")?.split("-").join(" ");
+  const jobType = searchParams.get("job_type")?.split("-").join(" ");
 
   // handle jobposition filter
   const handleJobPositionChange = (jobPositionId: any) => {
-    setJobPosition(jobPositionId);
     masterdata.job_position.map((items: any) => {
       if (items.job_position_id == jobPositionId) {
         const text = items.position_name;
         const newtext = text.split(" ").join("-");
         searchParams.set("job_position", newtext);
+        searchParams.set("page", "1");
         setSearchParams(searchParams);
       }
     });
@@ -52,20 +40,20 @@ const Filter = React.memo(() => {
   const selectDate = (event: any) => {
     const { value } = event.target;
     searchParams.set("start_date", value);
+    searchParams.set("page", "1");
     setSearchParams(searchParams);
     dispatch(setCurrentPage(0)); // Reset to the first page
   };
 
   //handle jobType
   const handleJobType = (jobTypeId: any) => {
-    setJobType(jobTypeId);
     masterdata.job_type.map((items: any) => {
       if (items.job_type_id == jobTypeId) {
         const text = items.job_type_name;
         const newtext = text.split(" ").join("-");
         searchParams.set("job_type", newtext);
+        searchParams.set("page", "1");
         setSearchParams(searchParams);
-        // console.log("searchParams: ", searchParams);
       }
     });
     dispatch(setCurrentPage(0)); // Reset to the first page
@@ -74,25 +62,38 @@ const Filter = React.memo(() => {
   //handle resumeby function
   const Resumebyfunction = (resumeby: any) => {
     searchParams.set("resume_manager", resumeby);
+    searchParams.set("page", "1");
     setSearchParams(searchParams);
     dispatch(setCurrentPage(0)); // Reset to the first page
   };
+
   //handle gender function
   const genderFunction = (gender: any) => {
     searchParams.set("gender", gender);
+    searchParams.set("page", "1");
     setSearchParams(searchParams);
     dispatch(setCurrentPage(0)); // Reset to the first page
   };
 
-
   //handle name search function
 
-  const handleNameSearch = (e:any)=>{
-    const text = e.target.value
-    const newtext = text.split(" ").join("_").trim()
-    searchParams.set("helper_name", newtext);
-    setSearchParams(searchParams)
- }
+  //   const handleNameSearch = (e:any)=>{
+  //     const text = e.target.value
+  //     const newtext = text.split(" ").join("_").trim()
+  //     searchParams.set("helper_name", newtext);
+  //     setSearchParams(searchParams)
+  //  }
+  const handleNameSearch = (e: any) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const text = e.target.value.trim();
+      if (text !== "") {
+        const newtext = text.split(" ").join("_").trim();
+        searchParams.set("helper_name", newtext);
+        setSearchParams(searchParams);
+      }
+    }
+  };
 
   // const handleSkillChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   //   const skill = event.target.value;
@@ -109,15 +110,10 @@ const Filter = React.memo(() => {
 
   const handleReset = () => {};
 
-  // const propsforOrderBy = {
-  //   value: selectedValue,
-  //   onChange: handleSelectChange,
-  // };
-
   //age range selector state and function
   const [range, setRange] = useState([20, 80]);
 
-  const handleRangeChange = (newRange) => {
+  const handleRangeChange = (newRange: any) => {
     setRange(newRange);
   };
   const Resumeby = [
@@ -143,7 +139,6 @@ const Filter = React.memo(() => {
 
   return (
     <div className="border-2 border-black bg-[#aaa8a80e] px-4 rounded-lg mr-4">
-      {/* {false && <OrderByComp {...propsforOrderBy} />} */}
       <div className="pl-4 mt-4 text-blue-800 font-normal text-[24px]">
         I'm Looking For
       </div>
@@ -173,7 +168,7 @@ const Filter = React.memo(() => {
                     id={`jobPos-${items.job_position_id}`}
                     type="radio"
                     name="jobPos"
-                    checked={jobPosition === items.job_position_id}
+                    checked={jobPosition === items.position_name}
                     onChange={() =>
                       handleJobPositionChange(items.job_position_id)
                     }
@@ -193,10 +188,9 @@ const Filter = React.memo(() => {
           <div className="w-full">
             <input
               className="border-[2px] w-full py-1 px-3 rounded-md"
+              value={selectedDate ? selectedDate : ""}
               type="date"
-              value={selectedDate}
               onChange={(event) => selectDate(event)}
-              // onChange={selectDate}
             />
           </div>
         </div>
@@ -242,7 +236,7 @@ const Filter = React.memo(() => {
                     id={`jobType-${items.job_type_id}`}
                     type="radio"
                     name="jobType"
-                    checked={jobType === items.job_type_id}
+                    checked={jobType === items.job_type_name}
                     onChange={() => handleJobType(items.job_type_id)}
                   />
 
@@ -281,7 +275,7 @@ const Filter = React.memo(() => {
         {/* gender */}
         <div>
           <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
-            Resume by
+            Gender
           </h2>
           {Gender &&
             Gender.map((items: any) => {
@@ -318,11 +312,19 @@ const Filter = React.memo(() => {
 
         {/* name search input box */}
         <div>
-        <h2 className="mt-2 text-blue-900 font-normal text-[18px]">
+          <h2 className="mt-2 text-blue-900 font-normal text-[18px]">
             Helper Name
           </h2>
           <div className="py-1">
-            <input className="border-[1px] mt-1 border-gray-400 p-1 placeholder:pl-1" type="text" name="name" id="name" onChange={handleNameSearch} value={helperName} placeholder="Seach with Helper Name"/>
+            <input
+              className="border-[1px] mt-1 border-gray-400 p-1 placeholder:pl-1"
+              type="text"
+              name="name"
+              id="name"
+              onChange={handleNameSearch}
+              onKeyDown={handleNameSearch}
+              placeholder="Seach with Helper Name"
+            />
           </div>
         </div>
       </form>
@@ -330,5 +332,54 @@ const Filter = React.memo(() => {
   );
 });
 
-
 export default Filter;
+
+// <div _ngcontent-sc213="" class="dropdown-list" hidden="">
+// <ul _ngcontent-sc213="" class="item1">
+//     <li _ngcontent-sc213="" class="multiselect-item-checkbox ng-star-inserted" style="border-bottom: 1px solid #ccc; padding: 10px;">
+//         <input _ngcontent-sc213="" type="checkbox" aria-label="multiselect-select-all">
+//         <div _ngcontent-sc213="">Select All</div>
+//     </li>
+//     <!---->
+//     <li _ngcontent-sc213="" class="filter-textbox ng-star-inserted">
+//         <input _ngcontent-sc213="" type="text" aria-label="multiselect-search" placeholder="Search" value="" class="ng-untouched ng-pristine ng-valid">
+//     </li>
+//     <!---->
+// </ul>
+// <ul _ngcontent-sc213="" class="item2" style="max-height:197px;">
+//     <li _ngcontent-sc213="" class="multiselect-item-checkbox ng-star-inserted">
+//         <input _ngcontent-sc213="" type="checkbox" aria-label="multiselect-item">
+//         <div _ngcontent-sc213="">Finished Contract</div>
+//     </li>
+//     <li _ngcontent-sc213="" class="multiselect-item-checkbox ng-star-inserted">
+//         <input _ngcontent-sc213="" type="checkbox" aria-label="multiselect-item">
+//         <div _ngcontent-sc213="">Terminated (Relocation / Financial)</div>
+//     </li>
+//     <li _ngcontent-sc213="" class="multiselect-item-checkbox ng-star-inserted">
+//         <input _ngcontent-sc213="" type="checkbox" aria-label="multiselect-item">
+//         <div _ngcontent-sc213="">Terminated (Other)</div>
+//     </li>
+//     <li _ngcontent-sc213="" class="multiselect-item-checkbox ng-star-inserted">
+//         <input _ngcontent-sc213="" type="checkbox" aria-label="multiselect-item">
+//         <div _ngcontent-sc213="">Break Contract</div>
+//     </li>
+//     <li _ngcontent-sc213="" class="multiselect-item-checkbox ng-star-inserted">
+//         <input _ngcontent-sc213="" type="checkbox" aria-label="multiselect-item">
+//         <div _ngcontent-sc213="">Transfer</div>
+//     </li>
+//     <li _ngcontent-sc213="" class="multiselect-item-checkbox ng-star-inserted">
+//         <input _ngcontent-sc213="" type="checkbox" aria-label="multiselect-item">
+//         <div _ngcontent-sc213="">Working in Home Country</div>
+//     </li>
+//     <li _ngcontent-sc213="" class="multiselect-item-checkbox ng-star-inserted">
+//         <input _ngcontent-sc213="" type="checkbox" aria-label="multiselect-item">
+//         <div _ngcontent-sc213="">Unemployed</div>
+//     </li>
+//     <li _ngcontent-sc213="" class="multiselect-item-checkbox ng-star-inserted">
+//         <input _ngcontent-sc213="" type="checkbox" aria-label="multiselect-item">
+//         <div _ngcontent-sc213="">Ex overseas</div>
+//     </li>
+//     <!---->
+//     <!---->
+// </ul>
+// </div>
