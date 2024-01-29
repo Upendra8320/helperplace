@@ -1,4 +1,4 @@
-//problems 1. when reload the page jobType and jobPos becomes undefined fix it and then that does not passess in the useffect
+//problems 1. when ever loading it pagesize becomes 0 fix it
 
 import { useEffect, useState } from "react";
 import locationLogo from "../assets/helperlocationlogo.webp";
@@ -14,27 +14,41 @@ import { Link, useSearchParams } from "react-router-dom";
 const CandiDetailComponent = () => {
   const [jobPosId, setJobPosId] = useState();
   const [jobTypeId, setJobTypeId] = useState();
+  const [locationArr, setLocationArr] = useState<number[]>([]);
+  const locationIds = locationArr.join(",")
+  // console.log('locationIds: ', locationIds);
 
   const [searchParam, setSearchParam] = useSearchParams();
-  const job_position = searchParam.get("job_position");
-  console.log("job_position usesearch", job_position);
+  const job_Position = searchParam.get("job_position");
+  // console.log("job_position usesearch", job_Position);
   const start_date = searchParam.get("start_date");
-  const job_type = searchParam.get("job_type");
+  const job_Type = searchParam.get("job_type");
   const resume_manager = searchParam.get("resume_manager");
   const gender = searchParam.get("gender");
   const helperName = searchParam.get("helper_name");
   const orderBY = searchParam.get("order_by");
+  const minimumExperience = searchParam.get("experience_range");
+  const [exp_min, exp_max] = minimumExperience
+    ? minimumExperience.split("-")
+    : [0, 40];
+  const minimumAge = searchParam.get("age_range");
+  const [age_min, age_max] = minimumAge ? minimumAge.split("-") : [18, 60];
+  const location = searchParam.get("location");
+  console.log("location: ", location);
+  const locationArray = location?.split(",");
+  console.log("locationArray: ", locationArray);
 
   const dispatch = useAppDispatch();
-  console.log("jobpos", jobPosId);
-  console.log("jobtype", jobTypeId);
+  // console.log("jobpos", jobPosId);
+  // console.log("jobtype", jobTypeId);
 
   //fetching candidate data
   const { data, currentPage, pageSize, totalRecords, isLoading, error }: any =
     useAppSelector((state) => state.candidateAllData);
 
   //fetching masterdata
-  const { data: masterData }: any = useAppSelector((state) => state.masterData);
+  const { data: masterData, isLoading: masterDataLoading }: any =
+    useAppSelector((state) => state.masterData);
 
   //master data useeffect
   useEffect(() => {
@@ -42,30 +56,42 @@ const CandiDetailComponent = () => {
   }, []);
 
   useEffect(() => {
-  // const job_position = searchParam.get("job_position");
-    if (job_position) {
-      masterData.job_position &&
-        masterData.job_position.map((element: any) => {
-          const text = job_position;
-          const newtext = text?.split("-").join(" ");
-          if (element.position_name === newtext) {
-            setJobPosId(element.job_position_id);
-          }
+    if (!masterDataLoading) {
+      if (job_Position) {
+        masterData.job_position &&
+          masterData.job_position.map((element: any) => {
+            const text = job_Position;
+            const newtext = text?.split("-").join(" ");
+            if (element.position_name === newtext) {
+              setJobPosId(element.job_position_id);
+            }
+          });
+      }
+      if (job_Type) {
+        masterData.job_type &&
+          masterData.job_type.map((element: any) => {
+            const text = job_Type;
+            const newtext = text?.split("-").join(" ");
+            if (element.job_type_name === newtext) {
+              setJobTypeId(element.job_type_id);
+            }
+          });
+      }
+      if(locationArray) {
+        let country_ids: number[] = [];
+        masterData?.candidate_country?.map((elements: any) => {
+          locationArray?.forEach((items: any) => {
+            if (elements.country_name === items) {
+              country_ids.push(elements.country_id);
+            }
+          });
         });
+        setLocationArr(country_ids)
+      }
     }
-    if (job_type) {
-      masterData.job_type &&
-        masterData.job_type.map((element: any) => {
-          const text = job_type;
-          const newtext = text?.split("-").join(" ");
-          if (element.job_type_name === newtext) {
-            setJobTypeId(element.job_type_id);
-          }
-        });
-    }
-  }, [job_position, job_type]);
+  }, [job_Position, job_Type, masterData,location]);
 
-  //function to hanlde change page
+  //function to handle change page
   const handlePageChange = (newPage: number) => {
     let page = newPage + 1;
     searchParam.set("page", JSON.stringify(page));
@@ -83,10 +109,15 @@ const CandiDetailComponent = () => {
         helper_name: helperName,
         position_id: jobPosId,
         start_date: start_date,
+        country_id: locationIds,
         job_type_id: jobTypeId,
         resume_manager: resume_manager,
         gender: gender,
         order_by: orderBY,
+        experience_min: exp_min,
+        experience_max: exp_max,
+        age_min: age_min,
+        age_max: age_max,
       })
     );
   }, [
@@ -98,11 +129,18 @@ const CandiDetailComponent = () => {
     resume_manager,
     gender,
     helperName,
-    orderBY
+    orderBY,
+    minimumExperience,
+    minimumAge,
+    locationIds
   ]);
 
-  if (isLoading) {
+  if (isLoading || masterDataLoading) {
     return <p>Loading...</p>;
+  }
+
+  if (data.length === 0) {
+    return <p>No candidate data available.</p>;
   }
 
   if (error) {

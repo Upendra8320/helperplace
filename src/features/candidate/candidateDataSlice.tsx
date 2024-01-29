@@ -8,17 +8,17 @@ export interface Parameter {
   helper_name?: string | null;
   start_date?: Date | null;
   job_type_id?: number;
-  country_id?: number;
-  position_id?: number;
+  country_id?: string;
+  position_id?: number; 
   nationality_id?: number;
   edu_id?: number;
   contract_status_id?: number;
   resume_manager?: string | null;
   gender?: string | null;
-  age_min?: number;
-  age_max?: number;
-  experience_min?: number; // Updated from 0
-  experience_max?: number;
+  age_min?: number | string;
+  age_max?: number |string;
+  experience_min?: number |string; // Updated from 0
+  experience_max?: number | string;
   marital_status?: string;
   order_by?: string | null | undefined;
   location_order?: number; // Updated from 0
