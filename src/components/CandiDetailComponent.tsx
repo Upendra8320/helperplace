@@ -1,15 +1,15 @@
 //problems 1. when ever loading it pagesize becomes 0 fix it
-
 import { useEffect, useState } from "react";
 import locationLogo from "../assets/helperlocationlogo.webp";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-
 import {
   fetchCandidatesAction,
   setCurrentPage,
 } from "../features/candidate/candidateDataSlice";
 import { fetchMasterDataAction } from "../features/masterData/masterDataSlice";
 import { Link, useSearchParams } from "react-router-dom";
+import Skeleton from '@mui/material/Skeleton';
+import Box from '@mui/material/Box';
 
 const CandiDetailComponent = () => {
   const [jobPosId, setJobPosId] = useState();
@@ -34,9 +34,9 @@ const CandiDetailComponent = () => {
   const minimumAge = searchParam.get("age_range");
   const [age_min, age_max] = minimumAge ? minimumAge.split("-") : [18, 60];
   const location = searchParam.get("location");
-  console.log("location: ", location);
+  // console.log("location: ", location);
   const locationArray = location?.split(",");
-  console.log("locationArray: ", locationArray);
+  // console.log("locationArray: ", locationArray);
 
   const dispatch = useAppDispatch();
   // console.log("jobpos", jobPosId);
@@ -136,7 +136,31 @@ const CandiDetailComponent = () => {
   ]);
 
   if (isLoading || masterDataLoading) {
-    return <p>Loading...</p>;
+    // return <p>Loading...</p>;
+    return    <Box sx={{ width: 750 }}>
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton />
+    <Skeleton animation="wave" />
+    <Skeleton animation="wave" />
+    <Skeleton animation="wave" />
+    <Skeleton animation="wave" />
+    <Skeleton animation="wave" />
+    <Skeleton animation="wave" />
+    <Skeleton animation="wave" />
+    <Skeleton animation={false} />
+    <Skeleton animation={false} />
+    <Skeleton animation={false} />
+  </Box>
   }
 
   if (data.length === 0) {

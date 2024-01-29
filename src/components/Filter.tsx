@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { useSearchParams } from "react-router-dom";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import DropDown from "./DropDown";
 
 const Filter = React.memo(() => {
   const dispatch = useAppDispatch();
@@ -95,18 +96,6 @@ const Filter = React.memo(() => {
     }
   };
 
-  // const handleSkillChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const skill = event.target.value;
-
-  //   // Update selected skills
-  //   if (event.target.checked) {
-  //     setSelectedSkills((prevSkills) => [...prevSkills, skill]);
-  //   } else {
-  //     setSelectedSkills((prevSkills) =>
-  //       prevSkills.filter((prevSkill) => prevSkill !== skill)
-  //     );
-  //   }
-  // };
 
   //function for reset button
   const handleReset = () => {};
@@ -118,14 +107,14 @@ const Filter = React.memo(() => {
     setSearchParams(searchParams);
   };
 
-  //function for age range selection
+  // function for age range selection
   const handleAgeRangeChange = (newRange: any) => {
-    searchParams.set("age_range", `${newRange[0]}-${newRange[1]}`);
-    searchParams.set("page", "1");
-    setSearchParams(searchParams);
+      searchParams.set("age_range", `${newRange[0]}-${newRange[1]}`);
+      searchParams.set("page", "1");
+      setSearchParams(searchParams);      
   };
 
-  // const handleAgeRangeComplete = (newRange: any) => {
+  // const handleAgeRangeChange = (newRange: any) => {
   //   searchParams.set("age_range", `${newRange[0]}-${newRange[1]}`);
   //   searchParams.set("page", "1");
   //   setSearchParams(searchParams);
@@ -137,7 +126,6 @@ const Filter = React.memo(() => {
 
   const location = searchParams.get("location");
   const locationArray = location?.split(",");
-  const locationLen = locationArray?.length;
 
 
   // handle location selection
@@ -192,10 +180,10 @@ const Filter = React.memo(() => {
     }
   };
 
-  //handle dropdown menu of location
-  const toggleDropdown = () => {
-    setIsOpen((prevIsOpen) => !prevIsOpen);
-  };
+  // handle dropdown menu of location
+  // const toggleDropdown = () => {
+  //   setIsOpen((prevIsOpen) => !prevIsOpen);
+  // };
   //object array for resumeby details
   const Resumeby = [
     {
@@ -277,7 +265,8 @@ const Filter = React.memo(() => {
           </div>
         </div>
         {/* candidate location */}
-        <div id="location">
+        <DropDown name={'Candidate Location'} handleSelectAll={handleSelectAll} handleLocation={handleLocation} selectAllValue={selectAll} locationArray={locationArray}/>
+        {/* <div id="location">
           <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
             Candidate Location
           </h2>
@@ -309,7 +298,7 @@ const Filter = React.memo(() => {
             </div>
 
             {isOpen && (
-              <div className="absolute right-0 mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-[10]">
+              <div className="absolute right-0 mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-[10] h-[500px] overflow-y-scroll no-scrollbar">
                 <div
                   className="py-1"
                   role="menu"
@@ -357,7 +346,7 @@ const Filter = React.memo(() => {
               </div>
             )}
           </div>
-        </div>
+        </div> */}
 
         {/* Job type */}
         <div>
@@ -468,7 +457,7 @@ const Filter = React.memo(() => {
             max={60}
             value={age_range}
             onChange={handleAgeRangeChange}
-            // onChangeComplete={handleAgeRangeComplete}
+            // onChangeComplete={handleAgeRangeChange}
           />
         </div>
 
@@ -495,53 +484,3 @@ const Filter = React.memo(() => {
 });
 
 export default Filter;
-
-// <div   className="dropdown-list" hidden="">
-// <ul    className="item1">
-//     <li    className="multiselect-item-checkbox ng-star-inserted" style="border-bottom: 1px solid #ccc; padding: 10px;">
-//         <input   type="checkbox" aria-label="multiselect-select-all">
-//         <div  >Select All</div>
-//     </li>
-//     <!---->
-//     <li    className="filter-textbox ng-star-inserted">
-//         <input   type="text" aria-label="multiselect-search" placeholder="Search" value=""  className="ng-untouched ng-pristine ng-valid">
-//     </li>
-//     <!---->
-// </ul>
-// <ul    className="item2" style="max-height:197px;">
-//     <li    className="multiselect-item-checkbox ng-star-inserted">
-//         <input   type="checkbox" aria-label="multiselect-item">
-//         <div  >Finished Contract</div>
-//     </li>
-//     <li    className="multiselect-item-checkbox ng-star-inserted">
-//         <input   type="checkbox" aria-label="multiselect-item">
-//         <div  >Terminated (Relocation / Financial)</div>
-//     </li>
-//     <li    className="multiselect-item-checkbox ng-star-inserted">
-//         <input   type="checkbox" aria-label="multiselect-item">
-//         <div  >Terminated (Other)</div>
-//     </li>
-//     <li    className="multiselect-item-checkbox ng-star-inserted">
-//         <input   type="checkbox" aria-label="multiselect-item">
-//         <div  >Break Contract</div>
-//     </li>
-//     <li    className="multiselect-item-checkbox ng-star-inserted">
-//         <input   type="checkbox" aria-label="multiselect-item">
-//         <div  >Transfer</div>
-//     </li>
-//     <li    className="multiselect-item-checkbox ng-star-inserted">
-//         <input   type="checkbox" aria-label="multiselect-item">
-//         <div  >Working in Home Country</div>
-//     </li>
-//     <li    className="multiselect-item-checkbox ng-star-inserted">
-//         <input   type="checkbox" aria-label="multiselect-item">
-//         <div  >Unemployed</div>
-//     </li>
-//     <li    className="multiselect-item-checkbox ng-star-inserted">
-//         <input   type="checkbox" aria-label="multiselect-item">
-//         <div  >Ex overseas</div>
-//     </li>
-//     <!---->
-//     <!---->
-// </ul>
-// </div>
