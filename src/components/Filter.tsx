@@ -96,7 +96,6 @@ const Filter = React.memo(() => {
     }
   };
 
-
   //function for reset button
   const handleReset = () => {};
 
@@ -109,24 +108,18 @@ const Filter = React.memo(() => {
 
   // function for age range selection
   const handleAgeRangeChange = (newRange: any) => {
-      searchParams.set("age_range", `${newRange[0]}-${newRange[1]}`);
-      searchParams.set("page", "1");
-      setSearchParams(searchParams);      
+    searchParams.set("age_range", `${newRange[0]}-${newRange[1]}`);
+    searchParams.set("page", "1");
+    setSearchParams(searchParams);
   };
-
-  // const handleAgeRangeChange = (newRange: any) => {
-  //   searchParams.set("age_range", `${newRange[0]}-${newRange[1]}`);
-  //   searchParams.set("page", "1");
-  //   setSearchParams(searchParams);
-  // };
-
 
   const [locationValues, setLocationValues] = useState<string[]>([]); // State to store selected locations
   const [selectAll, setSelectAll] = useState(false); // State to track if "Select All" is checked
 
+
+//fetching from seachParams for location
   const location = searchParams.get("location");
   const locationArray = location?.split(",");
-
 
   // handle location selection
   const handleLocation = (location: string) => {
@@ -138,9 +131,10 @@ const Filter = React.memo(() => {
 
       // Join the array with commas
       const locationsParam = newLocationValues.join(",");
-      const sanitizedLocationsParam = locationsParam.replace(/%2C/g, ',');
+      const sanitizedLocationsParam = locationsParam.replace(/%2C/g, ",");
 
       searchParams.set("location", sanitizedLocationsParam);
+      searchParams.set("page", 1);
       setSearchParams(searchParams);
     } else {
       // Location is selected, remove it from the list
@@ -149,13 +143,13 @@ const Filter = React.memo(() => {
       );
       setLocationValues(newLocationValues);
       // Join the array with commas
-    const locationsParam = newLocationValues.join(',');
-    const sanitizedLocationsParam = locationsParam.replace(/%2C/g, ',');
+      const locationsParam = newLocationValues.join(",");
+      const sanitizedLocationsParam = locationsParam.replace(/%2C/g, ",");
 
-    // Update the URL parameter for location
-    searchParams.set("location", sanitizedLocationsParam);
-    searchParams.set("page",1)
-    setSearchParams(searchParams);
+      // Update the URL parameter for location
+      searchParams.set("location", sanitizedLocationsParam);
+      searchParams.set("page", 1);
+      setSearchParams(searchParams);
     }
   };
 
@@ -164,12 +158,14 @@ const Filter = React.memo(() => {
     setSelectAll(!selectAll);
     if (!selectAll) {
       // If "Select All" is checked, select all locations
-      const newLocationValues = masterdata?.candidate_country?.map((item: any) => item.country_name)
+      const newLocationValues = masterdata?.candidate_country?.map(
+        (item: any) => item.country_name
+      );
       setLocationValues(newLocationValues);
       const locationsParam = newLocationValues.join(",");
-      const sanitizedLocationsParam = locationsParam.replace(/%2C/g, ',');
+      const sanitizedLocationsParam = locationsParam.replace(/%2C/g, ",");
       searchParams.set("location", sanitizedLocationsParam);
-      searchParams.set("page",1)
+      searchParams.set("page", 1);
       setSearchParams(searchParams);
     } else {
       // If "Select All" is unchecked, clear all selected locations
@@ -179,6 +175,29 @@ const Filter = React.memo(() => {
       setSearchParams(searchParams);
     }
   };
+
+  const [contractStatus, setContractStatus] = useState<string[]>([]);
+  const contract = searchParams.get("contract_status");
+  const contractArr = contract?.split(",");
+  //handle Contract status function
+  const handleContract = (contract:string)=>{
+    const index = contractStatus.indexOf(contract)
+    if(index == -1){
+      const newcontractValues = [...contractStatus,  contract];
+      setContractStatus(newcontractValues)
+
+      const contractParams = newcontractValues.join(",")
+      searchParams.set("contract_status",contractParams)
+      setSearchParams(searchParams)
+    }else{
+      const newcontractValues = contractStatus.filter((item) => item !== contract)
+      setContractStatus(newcontractValues);
+      const contractParams = newcontractValues.join(",")
+      searchParams.set("contract_status",contractParams)
+      searchParams.set("page", 1);
+      setSearchParams(searchParams)
+    }
+  }
 
   // handle dropdown menu of location
   // const toggleDropdown = () => {
@@ -230,26 +249,26 @@ const Filter = React.memo(() => {
           <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
             Job Position
           </h2>
-          { masterdata?.job_position?.map((items: any) => {
-              return (
-                <div key={items.job_position_id} className="mt-1">
-                  <input
-                    className="mr-2"
-                    id={`jobPos-${items.job_position_id}`}
-                    type="radio"
-                    name="jobPos"
-                    checked={jobPosition === items.position_name}
-                    onChange={() =>
-                      handleJobPositionChange(items.job_position_id)
-                    }
-                  />
+          {masterdata?.job_position?.map((items: any) => {
+            return (
+              <div key={items.job_position_id} className="mt-1">
+                <input
+                  className="mr-2"
+                  id={`jobPos-${items.job_position_id}`}
+                  type="radio"
+                  name="jobPos"
+                  checked={jobPosition === items.position_name}
+                  onChange={() =>
+                    handleJobPositionChange(items.job_position_id)
+                  }
+                />
 
-                  <label htmlFor={`jobPos-${items.job_position_id}`}>
-                    {items.position_name}
-                  </label>
-                </div>
-              );
-            })}
+                <label htmlFor={`jobPos-${items.job_position_id}`}>
+                  {items.position_name}
+                </label>
+              </div>
+            );
+          })}
         </div>
 
         {/* startDate */}
@@ -265,7 +284,30 @@ const Filter = React.memo(() => {
           </div>
         </div>
         {/* candidate location */}
-        <DropDown name={'Candidate Location'} handleSelectAll={handleSelectAll} handleLocation={handleLocation} selectAllValue={selectAll} locationArray={locationArray}/>
+        <DropDown
+          name={"Candidate Location"}
+          handleSelectAllFunction={handleSelectAll}
+          selectAllValue={selectAll}
+          handleFunction={handleLocation}
+          paramsValueArray={locationArray}
+          mapData =  {masterdata?.candidate_country}
+          dataId = {"country_id"}
+          dataName = {"country_name"}
+        />
+
+
+        {/* contract  status*/}
+        <DropDown
+          name={"Contract Status"}
+          handleSelectAllFunction={handleSelectAll}
+          selectAllValue={selectAll}
+          handleFunction={handleContract}
+          paramsValueArray={contractArr}
+          mapData =  {masterdata?.contract_status}
+          dataId = {"contract_sts_id"}
+          dataName = {"contract_sts_name"}
+        />
+
         {/* <div id="location">
           <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
             Candidate Location
@@ -347,6 +389,90 @@ const Filter = React.memo(() => {
             )}
           </div>
         </div> */}
+
+        {/* contract  status*/}
+        {/* <div id="location">
+          <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
+            Contract status
+          </h2>
+          <div className="relative inline-block text-left w-full mt-2">
+            <div>
+              <button
+                type="button"
+                className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
+                id="dropdown"
+                aria-haspopup="true"
+                aria-expanded="true"
+                onClick={toggleDropdown}
+              >
+               Contract status
+                <svg
+                  className="-mr-1 ml-2 h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 011.414-1.414L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {isOpen && (
+              <div className="absolute right-0 mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-[10] h-[500px] overflow-y-scroll no-scrollbar">
+                <div
+                  className="py-1"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="dropdown"
+                >
+                  <ul className="space-y-1">
+                    <li className="flex pl-4">
+                      <input
+                        type="checkbox"
+                        aria-label="multiselect-select-all"
+                        checked={selectAll}
+                        onChange={handleSelectAll}
+                      />
+                      <div className="px-4 py-2">Select All</div>
+                    </li>
+                    <li className="flex pl-4">
+                      <input
+                        type="text"
+                        aria-label="multiselect-search"
+                        placeholder="Search"
+                        className="px-4 py-2"
+                      />
+                    </li>
+                    {
+                      masterdata?.candidate_country?.map((items: any) => (
+                        <li className="flex pl-4" key={items.country_id}>
+                          <input
+                            type="checkbox"
+                            aria-label="multiselect-item"
+                            id={`location-${items.country_id}`}
+                            checked={locationArray?.includes(
+                              items.country_name
+                            )}
+                            // checked={locationValue == items.location_name}
+                            onChange={() => {
+                              handleLocation(items.country_name);
+                            }}
+                          />
+                          <div className="px-4 py-2">{items.country_name}</div>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
+        </div> */}
+
 
         {/* Job type */}
         <div>
