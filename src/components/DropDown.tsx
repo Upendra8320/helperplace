@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAppSelector } from "../app/hooks";
 
-const DropDown = ({ name,handleSelectAll,handleLocation,selectAllValue,locationArray }) => {
+const DropDown = ({ name,handleSelectAllFunction,handleFunction,selectAllValue,paramsValueArray,mapData, dataName, dataId }) => {
   const [isOpen, setIsOpen] = useState(false);
    //fetching masterdata
    const { data: masterdata }: any =
@@ -57,7 +57,7 @@ const DropDown = ({ name,handleSelectAll,handleLocation,selectAllValue,locationA
                     type="checkbox"
                     aria-label="multiselect-select-all"
                     checked={selectAllValue}
-                    onChange={handleSelectAll}
+                    onChange={handleSelectAllFunction}
                   />
                   <div className="px-4 py-2">Select All</div>
                 </li>
@@ -69,19 +69,19 @@ const DropDown = ({ name,handleSelectAll,handleLocation,selectAllValue,locationA
                     className="px-4 py-2"
                   />
                 </li>
-                {masterdata?.candidate_country?.map((items: any) => (
-                  <li className="flex pl-4" key={items.country_id}>
+                {mapData?.map((items: any) => (
+                  <li className="flex pl-4" key={items[dataId]}>
                     <input
                       type="checkbox"
                       aria-label="multiselect-item"
-                      id={`location-${items.country_id}`}
-                      checked={locationArray?.includes(items.country_name)}
+                      id={`location-${items.dataId}`}
+                      checked={paramsValueArray?.includes(items[dataName])}
                       // checked={locationValue == items.location_name}
                       onChange={() => {
-                        handleLocation(items.country_name);
+                        handleFunction(items[dataName]);
                       }}
                     />
-                    <div className="px-4 py-2">{items.country_name}</div>
+                    <div className="px-4 py-2">{items[dataName]}</div>
                   </li>
                 ))}
               </ul>

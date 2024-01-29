@@ -16,6 +16,9 @@ const CandiDetailComponent = () => {
   const [jobTypeId, setJobTypeId] = useState();
   const [locationArr, setLocationArr] = useState<number[]>([]);
   const locationIds = locationArr.join(",")
+  const [contractArr, setContractArr] = useState<number[]>([]);
+  const contractIds = contractArr.join(",")
+
   // console.log('locationIds: ', locationIds);
 
   const [searchParam, setSearchParam] = useSearchParams();
@@ -37,6 +40,8 @@ const CandiDetailComponent = () => {
   // console.log("location: ", location);
   const locationArray = location?.split(",");
   // console.log("locationArray: ", locationArray);
+  const contract = searchParam.get("contract_status")
+  const contractArray = contract?.split(",")
 
   const dispatch = useAppDispatch();
   // console.log("jobpos", jobPosId);
@@ -88,8 +93,19 @@ const CandiDetailComponent = () => {
         });
         setLocationArr(country_ids)
       }
+      if(contractArray) {
+        let contract_ids: number[] = [];
+        masterData?.contract_status?.map((elements: any) => {
+          contractArray?.forEach((items: any) => {
+            if (elements.contract_sts_name === items) {
+              contract_ids.push(elements.contract_sts_id);
+            }
+          });
+        });
+        setContractArr(contract_ids)
+      }
     }
-  }, [job_Position, job_Type, masterData,location]);
+  }, [job_Position, job_Type, masterData,location,contract]);
 
   //function to handle change page
   const handlePageChange = (newPage: number) => {
@@ -110,6 +126,7 @@ const CandiDetailComponent = () => {
         position_id: jobPosId,
         start_date: start_date,
         country_id: locationIds,
+        contract_status_id: contractIds,
         job_type_id: jobTypeId,
         resume_manager: resume_manager,
         gender: gender,
@@ -132,7 +149,8 @@ const CandiDetailComponent = () => {
     orderBY,
     minimumExperience,
     minimumAge,
-    locationIds
+    locationIds,
+    contractIds
   ]);
 
   if (isLoading || masterDataLoading) {
