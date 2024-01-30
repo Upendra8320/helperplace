@@ -228,7 +228,7 @@ const Filter = React.memo(() => {
   ];
 
   return (
-    <div className="border-2 border-black bg-[#aaa8a80e] px-4 rounded-lg mr-4">
+    <div className=" border-2 border-black bg-[#aaa8a80e] px-4 rounded-lg mr-4 h-[800px] w-[400px] md:w-[500px] overflow-y-scroll lg:h-auto lg:w-auto bg-white">
       <div className="pl-4 mt-4 text-blue-800 font-normal text-[24px]">
         I'm Looking For
       </div>
