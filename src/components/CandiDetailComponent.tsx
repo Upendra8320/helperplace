@@ -1,4 +1,3 @@
-//problems 1. when ever loading it pagesize becomes 0 fix it
 import { useEffect, useState } from "react";
 import locationLogo from "../assets/helperlocationlogo.webp";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
@@ -8,8 +7,7 @@ import {
 } from "../features/candidate/candidateDataSlice";
 import { fetchMasterDataAction } from "../features/masterData/masterDataSlice";
 import { Link, useSearchParams } from "react-router-dom";
-import Skeleton from '@mui/material/Skeleton';
-import Box from '@mui/material/Box';
+import Skeleton from '../components/Skeleton';
 
 const CandiDetailComponent = () => {
   const [jobPosId, setJobPosId] = useState();
@@ -49,7 +47,9 @@ const CandiDetailComponent = () => {
 
   //fetching candidate data
   const { data, currentPage, pageSize, totalRecords, isLoading, error }: any =
-    useAppSelector((state) => state.candidateAllData);
+  useAppSelector((state) => state.candidateAllData);
+  // console.log('currentPage: ', currentPage);
+    
 
   //fetching masterdata
   const { data: masterData, isLoading: masterDataLoading }: any =
@@ -71,6 +71,8 @@ const CandiDetailComponent = () => {
               setJobPosId(element.job_position_id);
             }
           });
+      }else{
+        setJobPosId(null);
       }
       if (job_Type) {
         masterData.job_type &&
@@ -81,6 +83,8 @@ const CandiDetailComponent = () => {
               setJobTypeId(element.job_type_id);
             }
           });
+      }else{
+        setJobTypeId(null);
       }
       if(locationArray) {
         let country_ids: number[] = [];
@@ -92,6 +96,8 @@ const CandiDetailComponent = () => {
           });
         });
         setLocationArr(country_ids)
+      }else{
+        setLocationArr([]); //default value for country is Thailand
       }
       if(contractArray) {
         let contract_ids: number[] = [];
@@ -103,6 +109,8 @@ const CandiDetailComponent = () => {
           });
         });
         setContractArr(contract_ids)
+      }else{
+        setContractArr([]);  //Default Value : Continue working
       }
     }
   }, [job_Position, job_Type, masterData,location,contract]);
@@ -137,8 +145,10 @@ const CandiDetailComponent = () => {
         age_max: age_max,
       })
     );
+  // console.log('currentPage: ', currentPage);
+  // console.log("searchParam",searchParam)
+
   }, [
-    dispatch,
     currentPage,
     jobPosId,
     start_date,
@@ -150,35 +160,12 @@ const CandiDetailComponent = () => {
     minimumExperience,
     minimumAge,
     locationIds,
-    contractIds
+    contractIds,
   ]);
 
   if (isLoading || masterDataLoading) {
     // return <p>Loading...</p>;
-    return    <Box sx={{ width: 750 }}>
-    <Skeleton />
-    <Skeleton />
-    <Skeleton />
-    <Skeleton />
-    <Skeleton />
-    <Skeleton />
-    <Skeleton />
-    <Skeleton />
-    <Skeleton />
-    <Skeleton />
-    <Skeleton />
-    <Skeleton />
-    <Skeleton animation="wave" />
-    <Skeleton animation="wave" />
-    <Skeleton animation="wave" />
-    <Skeleton animation="wave" />
-    <Skeleton animation="wave" />
-    <Skeleton animation="wave" />
-    <Skeleton animation="wave" />
-    <Skeleton animation={false} />
-    <Skeleton animation={false} />
-    <Skeleton animation={false} />
-  </Box>
+    return    <Skeleton/>
   }
 
   if (data.length === 0) {

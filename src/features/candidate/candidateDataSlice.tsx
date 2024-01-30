@@ -6,7 +6,7 @@ export interface Parameter {
   start: number;
   length: number;
   helper_name?: string | null;
-  start_date?: Date | null;
+  start_date?: string | null;
   job_type_id?: number;
   country_id?: string;
   position_id?: number; 

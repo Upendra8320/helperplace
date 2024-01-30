@@ -71,6 +71,7 @@ const DropDown = ({ name,handleSelectAllFunction,handleFunction,selectAllValue,p
                 </li>
                 {mapData?.map((items: any) => (
                   <li className="flex pl-4" key={items[dataId]}>
+                    {/* console.log(items[dataName]) */}
                     <input
                       type="checkbox"
                       aria-label="multiselect-item"

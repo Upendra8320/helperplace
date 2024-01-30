@@ -1,22 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GrPowerReset } from "react-icons/gr";
 import { setCurrentPage } from "../features/candidate/candidateDataSlice";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import DropDown from "./DropDown";
+import Select from "react-select";
+
+const customStyles = {
+  control: (provided, state) => ({
+    ...provided,
+    borderColor: state.isFocused ? "#48bb78" : "#cbd5e0",
+    boxShadow: state.isFocused ? "0 0 0 1px #48bb78" : null,
+  }),
+};
 
 const Filter = React.memo(() => {
   const dispatch = useAppDispatch();
-  //drop location down state
-  const [isOpen, setIsOpen] = useState(false);
 
   //fetching master data
   const { data: masterdata }: any = useAppSelector((state) => state.masterData);
 
-  // const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
-  // console.log('selectedSkills: ', selectedSkills);
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedDate = searchParams.get("start_date");
   const ResumeByValue = searchParams.get("resume_manager");
@@ -96,9 +101,6 @@ const Filter = React.memo(() => {
     }
   };
 
-  //function for reset button
-  const handleReset = () => {};
-
   //function for experience range selection
   const handleExpRangeChange = (newRange: any) => {
     searchParams.set("experience_range", `${newRange[0]}-${newRange[1]}`);
@@ -114,12 +116,41 @@ const Filter = React.memo(() => {
   };
 
   const [locationValues, setLocationValues] = useState<string[]>([]); // State to store selected locations
+  console.log("locationValues: ", locationValues);
   const [selectAll, setSelectAll] = useState(false); // State to track if "Select All" is checked
 
+  //fetching from seachParams for location
+  const location = searchParams?.get("location");
+  // console.log('location: ', location);
+  let locationArray: string[] = [];
+  if (location?.length >1) {
+    locationArray = location?.split(",");
+  }
+  console.log("locationArray: ", locationArray);
 
-//fetching from seachParams for location
-  const location = searchParams.get("location");
-  const locationArray = location?.split(",");
+  // useEffect for location select dropdown
+  useEffect(() => {
+    // const locationParam = searchParams.get("location");
+    // const fetchedLocationParams = locationParam?.split(",");
+    // console.log("fetchedLocationParams: ", fetchedLocationParams);
+    // console.log("locationParam: ", locationParam);
+    let values: string[] = [];
+    if (locationValues.length === 0) {
+      const locationParam = searchParams.get("location");
+      const fetchedLocationParams = locationParam?.split(",");
+      if (fetchedLocationParams) {
+        for (let value of fetchedLocationParams) {
+          values.push(value);
+        }
+        setLocationValues(values);
+      }
+    }
+
+    const locationsParam = locationValues?.join(",");
+    searchParams.set("location", locationsParam);
+    searchParams.set("page", 1);
+    setSearchParams(searchParams);
+  }, [locationValues]);
 
   // handle location selection
   const handleLocation = (location: string) => {
@@ -131,9 +162,9 @@ const Filter = React.memo(() => {
 
       // Join the array with commas
       const locationsParam = newLocationValues.join(",");
-      const sanitizedLocationsParam = locationsParam.replace(/%2C/g, ",");
+      // const sanitizedLocationsParam = locationsParam.replace(/%2C/g, ",");
 
-      searchParams.set("location", sanitizedLocationsParam);
+      searchParams.set("location", locationsParam);
       searchParams.set("page", 1);
       setSearchParams(searchParams);
     } else {
@@ -180,29 +211,36 @@ const Filter = React.memo(() => {
   const contract = searchParams.get("contract_status");
   const contractArr = contract?.split(",");
   //handle Contract status function
-  const handleContract = (contract:string)=>{
-    const index = contractStatus.indexOf(contract)
-    if(index == -1){
-      const newcontractValues = [...contractStatus,  contract];
-      setContractStatus(newcontractValues)
-
-      const contractParams = newcontractValues.join(",")
-      searchParams.set("contract_status",contractParams)
-      setSearchParams(searchParams)
-    }else{
-      const newcontractValues = contractStatus.filter((item) => item !== contract)
+  const handleContract = (contract: string) => {
+    const index = contractStatus.indexOf(contract);
+    if (index == -1) {
+      const newcontractValues = [...contractStatus, contract];
       setContractStatus(newcontractValues);
-      const contractParams = newcontractValues.join(",")
-      searchParams.set("contract_status",contractParams)
-      searchParams.set("page", 1);
-      setSearchParams(searchParams)
-    }
-  }
 
-  // handle dropdown menu of location
-  // const toggleDropdown = () => {
-  //   setIsOpen((prevIsOpen) => !prevIsOpen);
-  // };
+      const contractParams = newcontractValues.join(",");
+      searchParams.set("contract_status", contractParams);
+      setSearchParams(searchParams);
+    } else {
+      const newcontractValues = contractStatus.filter(
+        (item) => item !== contract
+      );
+      setContractStatus(newcontractValues);
+      const contractParams = newcontractValues.join(",");
+      searchParams.set("contract_status", contractParams);
+      searchParams.set("page", 1);
+      setSearchParams(searchParams);
+    }
+  };
+
+  //function for reset button
+  const handleReset = () => {
+    const newSearchParams = new URLSearchParams(); // Create a new empty search params object
+    setSearchParams(newSearchParams); // Set the search params to the new empty object
+    setLocationValues([]); // Reset location values state
+    setContractStatus([]); // Reset contract status state
+    dispatch(setCurrentPage(0)); // Reset to the first page
+  };
+
   //object array for resumeby details
   const Resumeby = [
     {
@@ -228,7 +266,7 @@ const Filter = React.memo(() => {
   ];
 
   return (
-    <div className=" border-2 border-black bg-[#aaa8a80e] px-4 rounded-lg mr-4 h-[800px] w-[400px] md:w-[500px] overflow-y-scroll lg:h-auto lg:w-auto bg-white">
+    <div className=" border-2 border-black bg-[#aaa8a80e] px-4 rounded-lg mr-4 h-[800px] w-[400px] md:w-[500px] overflow-y-scroll  lg:h-auto lg:w-auto bg-white no-scrollbar">
       <div className="pl-4 mt-4 text-blue-800 font-normal text-[24px]">
         I'm Looking For
       </div>
@@ -250,6 +288,8 @@ const Filter = React.memo(() => {
             Job Position
           </h2>
           {masterdata?.job_position?.map((items: any) => {
+            // console.log('jobPosition: ', jobPosition);
+            // console.log('jobPosition: ', items.position_name);
             return (
               <div key={items.job_position_id} className="mt-1">
                 <input
@@ -284,7 +324,7 @@ const Filter = React.memo(() => {
           </div>
         </div>
         {/* candidate location */}
-        <DropDown
+        {/* <DropDown
           name={"Candidate Location"}
           handleSelectAllFunction={handleSelectAll}
           selectAllValue={selectAll}
@@ -293,8 +333,29 @@ const Filter = React.memo(() => {
           mapData =  {masterdata?.candidate_country}
           dataId = {"country_id"}
           dataName = {"country_name"}
-        />
-
+        /> */}
+        <div id="location">
+          <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green] mb-2">
+            Candidate Location
+          </h2>
+          <Select
+            className="basic-multi-select"
+            classNamePrefix="select"
+            isMulti
+            options={masterdata?.candidate_country?.map((item: any) => ({
+              value: item.country_name,
+              label: item.country_name,
+            }))}
+            value={locationArray?.map((item) => ({
+              value: item,
+              label: item,
+            }))}
+            onChange={(selectedOptions) => {
+              setLocationValues(selectedOptions.map((option) => option.value));
+            }}
+            styles={customStyles}
+          />
+        </div>
 
         {/* contract  status*/}
         <DropDown
@@ -303,9 +364,9 @@ const Filter = React.memo(() => {
           selectAllValue={selectAll}
           handleFunction={handleContract}
           paramsValueArray={contractArr}
-          mapData =  {masterdata?.contract_status}
-          dataId = {"contract_sts_id"}
-          dataName = {"contract_sts_name"}
+          mapData={masterdata?.contract_status}
+          dataId={"contract_sts_id"}
+          dataName={"contract_sts_name"}
         />
 
         {/* <div id="location">
@@ -473,7 +534,6 @@ const Filter = React.memo(() => {
           </div>
         </div> */}
 
-
         {/* Job type */}
         <div>
           <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
@@ -592,15 +652,15 @@ const Filter = React.memo(() => {
           <h2 className="mt-2 text-blue-900 font-normal text-[18px]">
             Helper Name
           </h2>
-          <div className="py-1">
+          <div className="py-1 mb-3">
             <input
-              className="border-[1px] mt-1 border-gray-400 p-1 placeholder:pl-1"
+              className="border-[1px] mt-1 border-gray-400 p-1 placeholder:pl-1 rounded-md w-full"
               type="text"
               name="helper_name"
               id="name"
               onChange={handleNameSearch}
               onKeyDown={handleNameSearch}
-              placeholder="Seach with Helper Name"
+              placeholder="Search with Helper Name"
             />
           </div>
         </div>

@@ -4,6 +4,7 @@ import CandiDetailComponent from "../components/CandiDetailComponent";
 import CandidatePagecomponent from "../components/CandidatePagecomponent";
 import { OrderByComp } from "../components/OrderByComp";
 import Filter from "./../components/Filter";
+import Skeleton from "../components/Skeleton";
 
 const CandidatePage = () => {
     // State to manage the visibility of the filter modal
@@ -41,6 +42,7 @@ const CandidatePage = () => {
           </div>
           <div className="w-[95%] m-auto lg:w-[70%]">
             <CandiDetailComponent />
+            {/* <Skeleton/> */}
           </div>
         </div>
       </div>
