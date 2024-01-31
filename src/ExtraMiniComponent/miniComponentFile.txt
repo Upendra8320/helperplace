@@ -325,3 +325,75 @@
         //     setSearchParams(searchParams);
         //   }
         // };
+
+
+
+10.    drop down component                
+        {/* contract  status*/}
+        {/* <DropDown
+          name={"Contract Status"}
+          // handleSelectAllFunction={handleSelectAll}
+          // selectAllValue={selectAll}
+          handleFunction={handleContract}
+          paramsValueArray={contractArr}
+          mapData={masterdata?.contract_status}
+          dataId={"contract_sts_id"}
+          dataName={"contract_sts_name"}
+        /> */}
+
+
+
+11.     react seleact component
+
+        {/* <div id="location">
+          <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green] mb-2">
+            Candidate Location
+          </h2>
+          <Select
+            className="basic-multi-select"
+            classNamePrefix="select"
+            isMulti
+            options={masterdata?.candidate_country?.map((item: any) => ({
+              value: item.country_name,
+              label: item.country_name,
+            }))}
+            value={locationArray?.map((item:any) => ({
+              value: item,
+              label: item,
+            }))}
+            onChange={(selectedOptions) => {
+              setLocationValues(selectedOptions.map((option) => option.value));
+            }}
+            styles={customStyles}
+          />
+        </div> */}
+
+
+
+
+12.    Custom contract status fucntion code 
+
+        // const [contractStatus, setContractStatus] = useState<string[]>([]);
+        // const contract = searchParams.get("contract_status");
+        // const contractArr = contract?.split(",");
+        // //handle Contract status function
+        // const handleContract = (contract: string) => {
+        //   const index = contractStatus.indexOf(contract);
+        //   if (index == -1) {
+        //     const newcontractValues = [...contractStatus, contract];
+        //     setContractStatus(newcontractValues);
+
+        //     const contractParams = newcontractValues.join(",");
+        //     searchParams.set("contract_status", contractParams);
+        //     setSearchParams(searchParams);
+        //   } else {
+        //     const newcontractValues = contractStatus.filter(
+        //       (item) => item !== contract
+        //     );
+        //     setContractStatus(newcontractValues);
+        //     const contractParams = newcontractValues.join(",");
+        //     searchParams.set("contract_status", contractParams);
+        //     searchParams.set("page", "1");
+        //     setSearchParams(searchParams);
+        //   }
+        // };

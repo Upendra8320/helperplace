@@ -7,7 +7,6 @@ import { Resumeby } from "../constantData/constData";
 import { Gender } from "../constantData/constData";
 import RadioButton from "./RadioButton";
 import SliderRc from "./SliderRc";
-import DropDown from "./DropDown";
 import DropSelect from "./DropSelect";
 
 
@@ -120,8 +119,7 @@ const Filter = React.memo(() => {
 
   const [locationValues, setLocationValues] = useState<string[]>([]); // State to store selected locations
   const [contractValues, setContractValues] = useState<string[]>([]); // State to store selected locations
-  // console.log("locationValues: ", locationValues);
-  // const [selectAll, setSelectAll] = useState(false); // State to track if "Select All" is checked
+
 
   //fetching from seachParams for location
   const location = searchParams?.get("location");
@@ -137,7 +135,7 @@ const Filter = React.memo(() => {
       setLocationValues(locationArray);
     }
     if(contractValues.length ===0){
-      setContractStatus(contractArray)
+      setContractValues(contractArray)
     }
   }, []);
 
@@ -161,91 +159,14 @@ const Filter = React.memo(() => {
   }, [locationValues, contractValues]);
 
 
-  // handle location selection
-  // const handleLocation = (location: string) => {
-  //   const index = locationValues.indexOf(location);
-  //   if (index === -1) {
-  //     // Location is not selected, add it to the list
-  //     const newLocationValues = [...locationValues, location];
-  //     setLocationValues(newLocationValues);
 
-  //     // Join the array with commas
-  //     const locationsParam = newLocationValues.join(",");
-  //     // const sanitizedLocationsParam = locationsParam.replace(/%2C/g, ",");
-
-  //     searchParams.set("location", locationsParam);
-  //     searchParams.set("page", "1");
-  //     setSearchParams(searchParams);
-  //   } else {
-  //     // Location is selected, remove it from the list
-  //     const newLocationValues = locationValues.filter(
-  //       (item) => item !== location
-  //     );
-  //     setLocationValues(newLocationValues);
-  //     // Join the array with commas
-  //     const locationsParam = newLocationValues.join(",");
-
-  //     // Update the URL parameter for location
-  //     searchParams.set("location", locationsParam);
-  //     searchParams.set("page", "1");
-  //     setSearchParams(searchParams);
-  //   }
-  // };
-
-  // handle "Select All" checkbox
-  // const handleSelectAll = () => {
-  //   setSelectAll(!selectAll);
-  //   if (!selectAll) {
-  //     // If "Select All" is checked, select all locations
-  //     const newLocationValues = masterdata?.candidate_country?.map(
-  //       (item: any) => item.country_name
-  //     );
-  //     setLocationValues(newLocationValues);
-  //     const locationsParam = newLocationValues.join(",");
-  //     const sanitizedLocationsParam = locationsParam.replace(/%2C/g, ",");
-  //     searchParams.set("location", sanitizedLocationsParam);
-  //     searchParams.set("page", "1");
-  //     setSearchParams(searchParams);
-  //   } else {
-  //     // If "Select All" is unchecked, clear all selected locations
-  //     setLocationValues([]);
-  //     // const locationsParam = newLocationValues.join("");
-  //     searchParams.delete("location");
-  //     setSearchParams(searchParams);
-  //   }
-  // };
-
-  const [contractStatus, setContractStatus] = useState<string[]>([]);
-  const contract = searchParams.get("contract_status");
-  const contractArr = contract?.split(",");
-  //handle Contract status function
-  const handleContract = (contract: string) => {
-    const index = contractStatus.indexOf(contract);
-    if (index == -1) {
-      const newcontractValues = [...contractStatus, contract];
-      setContractStatus(newcontractValues);
-
-      const contractParams = newcontractValues.join(",");
-      searchParams.set("contract_status", contractParams);
-      setSearchParams(searchParams);
-    } else {
-      const newcontractValues = contractStatus.filter(
-        (item) => item !== contract
-      );
-      setContractStatus(newcontractValues);
-      const contractParams = newcontractValues.join(",");
-      searchParams.set("contract_status", contractParams);
-      searchParams.set("page", "1");
-      setSearchParams(searchParams);
-    }
-  };
 
   //function for reset button
   const handleReset = () => {
     const newSearchParams = new URLSearchParams(); // Create a new empty search params object
     setSearchParams(newSearchParams); // Set the search params to the new empty object
     setLocationValues([]); // Reset location values state
-    setContractStatus([]); // Reset contract status state
+    setContractValues([]); // Reset contract status state
     dispatch(setCurrentPage(0)); // Reset to the first page
   };
 
@@ -300,26 +221,16 @@ const Filter = React.memo(() => {
         setStateValues ={setLocationValues}
         dataName = {"country_name"}
         />
+
+        {/* contract status */}
         <DropSelect
         headName = {"Contract Status"}
         mapOptions = {masterdata?.contract_status}
-        paramsValue = {contractArr}
+        paramsValue = {contractArray}
         setStateValues ={setContractValues}
         dataName = {"contract_sts_name"}
         />
 
-        
-        {/* contract  status*/}
-        {/* <DropDown
-          name={"Contract Status"}
-          // handleSelectAllFunction={handleSelectAll}
-          // selectAllValue={selectAll}
-          handleFunction={handleContract}
-          paramsValueArray={contractArr}
-          mapData={masterdata?.contract_status}
-          dataId={"contract_sts_id"}
-          dataName={"contract_sts_name"}
-        /> */}
 
         {/* Job type */}
         <RadioButton

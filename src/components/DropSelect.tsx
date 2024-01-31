@@ -9,7 +9,15 @@ const customStyles = {
     }),
   };
 
-const DropSelect = ({headName, mapOptions, paramsValue,dataName,setStateValues}) => {
+  interface DropSelectProps {
+    headName: string;
+    mapOptions: any[];
+    paramsValue: any[];
+    dataName: string;
+    setStateValues: (selectedValues: string[]) => void;
+  }
+
+const DropSelect = ({headName, mapOptions, paramsValue,dataName,setStateValues}:DropSelectProps) => {
   return (
        <div>
        <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green] mb-2">
@@ -38,25 +46,3 @@ const DropSelect = ({headName, mapOptions, paramsValue,dataName,setStateValues})
 
 export default DropSelect
 
-{/* <div id="location">
-          <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green] mb-2">
-            Candidate Location
-          </h2>
-          <Select
-            className="basic-multi-select"
-            classNamePrefix="select"
-            isMulti
-            options={masterdata?.candidate_country?.map((item: any) => ({
-              value: item.country_name,
-              label: item.country_name,
-            }))}
-            value={locationArray?.map((item:any) => ({
-              value: item,
-              label: item,
-            }))}
-            onChange={(selectedOptions) => {
-              setLocationValues(selectedOptions.map((option) => option.value));
-            }}
-            styles={customStyles}
-          />
-        </div> */}
