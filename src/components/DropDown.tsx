@@ -1,12 +1,18 @@
-import React, { useState } from "react";
-import { useAppSelector } from "../app/hooks";
+import  { useState } from "react";
 
-const DropDown = ({ name,handleSelectAllFunction,handleFunction,selectAllValue,paramsValueArray,mapData, dataName, dataId }) => {
+interface DropDownProps {
+  name: string;
+  handleSelectAllFunction: () => void;
+  handleFunction: (value: string) => void;
+  selectAllValue: boolean;
+  paramsValueArray: string[] | undefined;
+  mapData: any[];
+  dataName: string;
+  dataId: string;
+}
+const DropDown = ({ name,handleSelectAllFunction,handleFunction,selectAllValue,paramsValueArray,mapData, dataName, dataId }:DropDownProps) => {
+
   const [isOpen, setIsOpen] = useState(false);
-   //fetching masterdata
-   const { data: masterdata }: any =
-   useAppSelector((state) => state.masterData);
-
 
   const toggleDropdown = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);

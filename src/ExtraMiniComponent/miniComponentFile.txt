@@ -1,0 +1,327 @@
+1.              Job position component radio buttons 
+                {/* <div id="jobPosition">
+                        <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
+                            Job Position
+                        </h2>
+                        {masterdata?.job_position?.map((items: any) => {
+                            // console.log('jobPosition: ', jobPosition);
+                            // console.log('jobPosition: ', items.position_name);
+                            return (
+                            <div key={items.job_position_id} className="mt-1">
+                                <input
+                                className="mr-2"
+                                id={`jobPos-${items.job_position_id}`}
+                                type="radio"
+                                name="jobPos"
+                                checked={jobPosition === items.position_name}
+                                onChange={() =>
+                                    handleJobPositionChange(items.job_position_id)
+                                }
+                                />
+
+                                <label htmlFor={`jobPos-${items.job_position_id}`}>
+                                {items.position_name}
+                                </label>
+                            </div>
+                            );
+                        })}
+                        </div> */}
+
+
+
+
+2.        this is drop down component  of candidate location
+        {/* <div id="location">
+          <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
+            Candidate Location
+          </h2>
+          <div className="relative inline-block text-left w-full mt-2">
+            <div>
+              <button
+                type="button"
+                className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
+                id="dropdown"
+                aria-haspopup="true"
+                aria-expanded="true"
+                onClick={toggleDropdown}
+              >
+                Candidate Location
+                <svg
+                  className="-mr-1 ml-2 h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 011.414-1.414L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {isOpen && (
+              <div className="absolute right-0 mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-[10] h-[500px] overflow-y-scroll no-scrollbar">
+                <div
+                  className="py-1"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="dropdown"
+                >
+                  <ul className="space-y-1">
+                    <li className="flex pl-4">
+                      <input
+                        type="checkbox"
+                        aria-label="multiselect-select-all"
+                        checked={selectAll}
+                        onChange={handleSelectAll}
+                      />
+                      <div className="px-4 py-2">Select All</div>
+                    </li>
+                    <li className="flex pl-4">
+                      <input
+                        type="text"
+                        aria-label="multiselect-search"
+                        placeholder="Search"
+                        className="px-4 py-2"
+                      />
+                    </li>
+                    {
+                      masterdata?.candidate_country?.map((items: any) => (
+                        <li className="flex pl-4" key={items.country_id}>
+                          <input
+                            type="checkbox"
+                            aria-label="multiselect-item"
+                            id={`location-${items.country_id}`}
+                            checked={locationArray?.includes(
+                              items.country_name
+                            )}
+                            // checked={locationValue == items.location_name}
+                            onChange={() => {
+                              handleLocation(items.country_name);
+                            }}
+                          />
+                          <div className="px-4 py-2">{items.country_name}</div>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
+        </div> */}
+
+
+        
+3.        this is a component reference of dropdown generic component 
+         {/* <DropDown
+          name={"Candidate Location"}
+          handleSelectAllFunction={handleSelectAll}
+          selectAllValue={selectAll}
+          handleFunction={handleLocation}
+          paramsValueArray={locationArray}
+          mapData =  {masterdata?.candidate_country}
+          dataId = {"country_id"}
+          dataName = {"country_name"}
+        /> */}
+
+
+
+
+
+
+
+
+4.          Jobtype Component radio button
+
+             {/* <div>
+          <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
+            Job Type
+          </h2>
+          {masterdata.job_type &&
+            masterdata.job_type.map((items: any) => {
+              return (
+                <div key={items.job_type_id} className="mt-1">
+                  <input
+                    className="mr-2"
+                    id={`jobType-${items.job_type_id}`}
+                    type="radio"
+                    name="jobType"
+                    checked={jobType === items.job_type_name}
+                    onChange={() => handleJobType(items.job_type_id)}
+                  />
+
+                  <label htmlFor={`jobType-${items.job_type_id}`}>
+                    {items.job_type_name}
+                  </label>
+                </div>
+              );
+            })}
+        </div> */}
+
+
+
+5.        resumeby component radiobutton
+
+              {/* <div>
+          <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
+            Resume by
+          </h2>
+          {Resumeby &&
+            Resumeby.map((items: any) => {
+              return (
+                <div key={items.id} className="mt-1">
+                  <input
+                    className="mr-2"
+                    id={`resumeby-${items.id}`}
+                    type="radio"
+                    name="resumeby"
+                    checked={ResumeByValue === items.name}
+                    onChange={() => Resumebyfunction(items.name)}
+                  />
+
+                  <label htmlFor={`resumeby-${items.id}`}>{items.name}</label>
+                </div>
+              );
+            })}
+        </div> */}
+
+
+
+6.          gender component radio button
+
+            
+        {/* gender */}
+        {/* <div>
+          <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
+            Gender
+          </h2>
+          {Gender &&
+            Gender.map((items: any) => {
+              return (
+                <div key={items.id} className="mt-1">
+                  <input
+                    className="mr-2"
+                    id={`gender-${items.id}`}
+                    type="radio"
+                    name="gender"
+                    checked={gender === items.name}
+                    onChange={() => genderFunction(items.name)}
+                  />
+
+                  <label htmlFor={`gender-${items.id}`}>{items.name}</label>
+                </div>
+              );
+            })}
+        </div> */}
+
+
+
+7.        working experience component rcslider
+
+
+          <div>
+          <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
+            Working Experience
+          </h2>
+          {/* <label>Select a range:</label> */}
+          <div className="flex items-center justify-between">
+            <div className="text-[18px]">{exp_range[0]}</div>
+            <div className="text-[18px]">{exp_range[1]}</div>
+          </div>
+          <Slider
+            range
+            min={0}
+            max={40}
+            value={exp_range}
+            onChange={handleExpRangeChange}
+          />
+        </div>
+
+
+
+8.         age range RcSelector
+
+
+            {/* age range selector */}
+                <div>
+                <h2 className="mt-2 text-blue-900 font-normal text-[18px] border-b-[1px] border-[green]">
+                    Age
+                </h2>
+                {/* <label>Select a range:</label> */}
+                <div className="flex items-center justify-between">
+                    <div className="text-[18px]">{age_range[0]}</div>
+                    <div className="text-[18px]">{age_range[1]}</div>
+                </div>
+                <Slider
+                    range
+                    min={18}
+                    max={60}
+                    value={age_range}
+                    onChange={handleAgeRangeChange}
+                    />
+                </div>
+
+
+
+
+
+9.    function for custom drop down to handle it 
+
+
+        
+        // handle location selection
+        // const handleLocation = (location: string) => {
+        //   const index = locationValues.indexOf(location);
+        //   if (index === -1) {
+        //     // Location is not selected, add it to the list
+        //     const newLocationValues = [...locationValues, location];
+        //     setLocationValues(newLocationValues);
+
+        //     // Join the array with commas
+        //     const locationsParam = newLocationValues.join(",");
+        //     // const sanitizedLocationsParam = locationsParam.replace(/%2C/g, ",");
+
+        //     searchParams.set("location", locationsParam);
+        //     searchParams.set("page", "1");
+        //     setSearchParams(searchParams);
+        //   } else {
+        //     // Location is selected, remove it from the list
+        //     const newLocationValues = locationValues.filter(
+        //       (item) => item !== location
+        //     );
+        //     setLocationValues(newLocationValues);
+        //     // Join the array with commas
+        //     const locationsParam = newLocationValues.join(",");
+
+        //     // Update the URL parameter for location
+        //     searchParams.set("location", locationsParam);
+        //     searchParams.set("page", "1");
+        //     setSearchParams(searchParams);
+        //   }
+        // };
+
+        // handle "Select All" checkbox
+        // const handleSelectAll = () => {
+        //   setSelectAll(!selectAll);
+        //   if (!selectAll) {
+        //     // If "Select All" is checked, select all locations
+        //     const newLocationValues = masterdata?.candidate_country?.map(
+        //       (item: any) => item.country_name
+        //     );
+        //     setLocationValues(newLocationValues);
+        //     const locationsParam = newLocationValues.join(",");
+        //     const sanitizedLocationsParam = locationsParam.replace(/%2C/g, ",");
+        //     searchParams.set("location", sanitizedLocationsParam);
+        //     searchParams.set("page", "1");
+        //     setSearchParams(searchParams);
+        //   } else {
+        //     // If "Select All" is unchecked, clear all selected locations
+        //     setLocationValues([]);
+        //     // const locationsParam = newLocationValues.join("");
+        //     searchParams.delete("location");
+        //     setSearchParams(searchParams);
+        //   }
+        // };
