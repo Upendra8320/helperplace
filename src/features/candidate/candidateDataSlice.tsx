@@ -1,6 +1,6 @@
 // candidatesSlice.ts
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchCandidates } from '../../apiService';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { fetchCandidates } from "../../apiService";
 
 export interface Parameter {
   start: number;
@@ -9,15 +9,15 @@ export interface Parameter {
   start_date?: string | null;
   job_type_id?: number;
   country_id?: string;
-  position_id?: number; 
+  position_id?: number;
   nationality_id?: number;
   edu_id?: number;
-  contract_status_id?: number;
+  contract_status_id?: string;
   resume_manager?: string | null;
   gender?: string | null;
   age_min?: number | string;
-  age_max?: number |string;
-  experience_min?: number |string; // Updated from 0
+  age_max?: number | string;
+  experience_min?: number | string; // Updated from 0
   experience_max?: number | string;
   marital_status?: string;
   order_by?: string | null | undefined;
@@ -26,7 +26,7 @@ export interface Parameter {
 }
 
 export const fetchCandidatesAction = createAsyncThunk(
-  'candidates/fetchCandidates',
+  "candidates/fetchCandidates",
   async (params: Parameter) => {
     const data = await fetchCandidates(params);
     return data;
@@ -52,7 +52,7 @@ const initialState: CandidatesState = {
 };
 
 const candidatesSlice = createSlice({
-  name: 'candidates',
+  name: "candidates",
   initialState,
   reducers: {
     setCurrentPage: (state, action) => {
@@ -71,7 +71,7 @@ const candidatesSlice = createSlice({
       })
       .addCase(fetchCandidatesAction.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = 'Error fetching candidates';
+        state.error = "Error fetching candidates";
       });
   },
 });

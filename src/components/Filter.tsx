@@ -20,7 +20,6 @@ const Filter = React.memo(() => {
   const selectedDate = searchParams.get("start_date");
   const ResumeByValue = searchParams?.get("resume_manager");
   const gender = searchParams.get("gender");
-  // const helperName = searchParams.get("helper_name");
   const jobPosition = searchParams.get("job_position")?.split("-").join(" ");
   const jobType = searchParams.get("job_type")?.split("-").join(" ");
   const minimumExperience = searchParams.get("experience_range");

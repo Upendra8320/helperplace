@@ -42,7 +42,6 @@ const CandidatePage = () => {
           </div>
           <div className="w-[95%] m-auto lg:w-[70%]">
             <CandiDetailComponent />
-            {/* <Skeleton/> */}
           </div>
         </div>
       </div>

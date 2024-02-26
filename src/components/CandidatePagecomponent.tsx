@@ -39,7 +39,7 @@ console.log(data)
   return (
     <div>
       <ul>
-        {data.map((candidate) => (
+        {data.map((candidate:any) => (
           <li key={candidate.id}>{candidate.helper_name}</li>
         ))}
       </ul>

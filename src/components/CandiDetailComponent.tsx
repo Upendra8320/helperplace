@@ -17,11 +17,9 @@ const CandiDetailComponent = () => {
   const [contractArr, setContractArr] = useState<number[]>([]);
   const contractIds = contractArr.join(",")
 
-  // console.log('locationIds: ', locationIds);
 
   const [searchParam, setSearchParam] = useSearchParams();
   const job_Position = searchParam.get("job_position");
-  // console.log("job_position usesearch", job_Position);
   const start_date = searchParam.get("start_date");
   const job_Type = searchParam.get("job_type");
   const resume_manager = searchParam.get("resume_manager");
@@ -35,20 +33,15 @@ const CandiDetailComponent = () => {
   const minimumAge = searchParam.get("age_range");
   const [age_min, age_max] = minimumAge ? minimumAge.split("-") : [18, 60];
   const location = searchParam.get("location");
-  // console.log("location: ", location);
   const locationArray = location?.split(",");
-  // console.log("locationArray: ", locationArray);
   const contract = searchParam.get("contract_status")
   const contractArray = contract?.split(",")
 
   const dispatch = useAppDispatch();
-  // console.log("jobpos", jobPosId);
-  // console.log("jobtype", jobTypeId);
 
   //fetching candidate data
   const { data, currentPage, pageSize, totalRecords, isLoading, error }: any =
   useAppSelector((state) => state.candidateAllData);
-  // console.log('currentPage: ', currentPage);
     
 
   //fetching masterdata
@@ -145,8 +138,6 @@ const CandiDetailComponent = () => {
         age_max: age_max,
       })
     );
-  // console.log('currentPage: ', currentPage);
-  // console.log("searchParam",searchParam)
 
   }, [
     currentPage,
@@ -164,7 +155,6 @@ const CandiDetailComponent = () => {
   ]);
 
   if (isLoading || masterDataLoading) {
-    // return <p>Loading...</p>;
     return    <Skeleton/>
   }
 
